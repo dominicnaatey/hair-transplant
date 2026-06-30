@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function FeaturesRow() {
   return (
-    <div className="container mx-auto px-6 lg:px-12 relative z-20 -mt-24 mb-32">
+    <div className="container mx-auto px-6 lg:px-12 relative z-20 -mt-24 mb-24 lg:mb-32">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         {/* Card 1 */}
@@ -26,7 +26,7 @@ export default function FeaturesRow() {
         </div>
         
         {/* Card 2 */}
-        <div className="bg-white p-8 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden cursor-pointer">
+        <div className="bg-white p-8 rounded-[1.75rem] shadow-[0_20px_55px_-16px_rgba(15,23,42,0.12)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 hover:shadow-[0_28px_65px_-20px_rgba(15,23,42,0.18)] transition-all duration-300 relative overflow-hidden cursor-pointer animate-fade-up" style={{ animationDelay: '120ms' }}>
           <div className="flex justify-between items-start">
              <span className="text-slate-300 text-sm font-semibold">02</span>
              <div className="text-blue-600">
@@ -45,7 +45,7 @@ export default function FeaturesRow() {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-white p-8 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden cursor-pointer">
+        <div className="bg-white p-8 rounded-[1.75rem] shadow-[0_20px_55px_-16px_rgba(15,23,42,0.12)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 hover:shadow-[0_28px_65px_-20px_rgba(15,23,42,0.18)] transition-all duration-300 relative overflow-hidden cursor-pointer animate-fade-up" style={{ animationDelay: '240ms' }}>
           <div className="flex justify-between items-start">
              <span className="text-slate-300 text-sm font-semibold">03</span>
              <div className="text-blue-600">
@@ -64,7 +64,7 @@ export default function FeaturesRow() {
         </div>
 
         {/* Card 4 */}
-        <div className="bg-white p-8 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden cursor-pointer">
+        <div className="bg-white p-8 rounded-[1.75rem] shadow-[0_20px_55px_-16px_rgba(15,23,42,0.12)] border border-slate-100 flex flex-col justify-between h-56 group hover:-translate-y-2 hover:shadow-[0_28px_65px_-20px_rgba(15,23,42,0.18)] transition-all duration-300 relative overflow-hidden cursor-pointer animate-fade-up" style={{ animationDelay: '360ms' }}>
           <div className="flex justify-between items-start">
              <span className="text-slate-300 text-sm font-semibold">04</span>
              <div className="text-blue-600">

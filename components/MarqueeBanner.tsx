@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function MarqueeBanner() {
   return (
-    <div className="py-8 bg-white border-y border-slate-100 overflow-hidden flex whitespace-nowrap mb-0 mt-16 select-none relative z-10">
+    <div className="py-8 bg-white/80 border-y border-slate-100 overflow-hidden flex whitespace-nowrap mb-0 mt-16 select-none relative z-10 backdrop-blur-sm shadow-[0_8px_30px_-18px_rgba(15,23,42,0.2)]">
       <div className="animate-[marquee_20s_linear_infinite] flex items-center gap-8">
         {[...Array(6)].map((_, i) => (
           <React.Fragment key={i}>

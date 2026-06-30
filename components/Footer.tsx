@@ -20,7 +20,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold font-serif tracking-wide">Hairise</span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin.
+                Personalized hair restoration care with a calm experience, advanced techniques, and support from consultation to recovery.
               </p>
               <div className="flex items-center gap-4 text-slate-400">
                 <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-slate-900 transition"><FacebookIcon size={16} /></a>
@@ -35,7 +35,7 @@ export default function Footer() {
                  <h4 className="font-bold font-serif text-lg mb-6">Contact Us</h4>
                  <ul className="space-y-4 text-slate-400 text-sm">
                    <li className="flex gap-3"><MapPin size={18} className="shrink-0 mt-0.5 text-blue-500" /> 5th Street, New York, USA</li>
-                   <li className="flex gap-3"><Mail size={18} className="shrink-0 mt-0.5 text-blue-500" /> themeht23@gmail.com</li>
+                   <li className="flex gap-3"><Mail size={18} className="shrink-0 mt-0.5 text-blue-500" /> hello@hairise.com</li>
                    <li className="flex gap-3"><Phone size={18} className="shrink-0 mt-0.5 text-blue-500" /> +91-234-567-8900</li>
                  </ul>
                </div>
@@ -43,22 +43,21 @@ export default function Footer() {
                <div>
                  <h4 className="font-bold font-serif text-lg mb-6">Quick Links</h4>
                  <ul className="space-y-3 text-slate-400 text-sm">
-                   <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                   <li><a href="#" className="hover:text-white transition">Team Member</a></li>
-                   <li><a href="#" className="hover:text-white transition">Our History</a></li>
-                   <li><a href="#" className="hover:text-white transition">Faq</a></li>
-                   <li><a href="#" className="hover:text-white transition">Contact</a></li>
+                   <li><a href="#services" className="hover:text-white transition">About Us</a></li>
+                   <li><a href="#results" className="hover:text-white transition">Results</a></li>
+                   {/* Blog link temporarily hidden while blog pages are not being added. */}
+                   {/* <li><a href="#blog" className="hover:text-white transition">Insights</a></li> */}
+                   <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
                  </ul>
                </div>
 
                <div>
                  <h4 className="font-bold font-serif text-lg mb-6">Services</h4>
                  <ul className="space-y-3 text-slate-400 text-sm">
-                   <li><a href="#" className="hover:text-white transition">Hair Loss Diagnosis</a></li>
-                   <li><a href="#" className="hover:text-white transition">Beard Restoration</a></li>
-                   <li><a href="#" className="hover:text-white transition">Androgenetic Alopecia</a></li>
-                   <li><a href="#" className="hover:text-white transition">Prosthetic Hair</a></li>
-                   <li><a href="#" className="hover:text-white transition">Hair Reconstruction</a></li>
+                   <li><a href="#diagnosis" className="hover:text-white transition">Hair Loss Diagnosis</a></li>
+                   <li><a href="#services" className="hover:text-white transition">Hair Restoration</a></li>
+                   <li><a href="#results" className="hover:text-white transition">Androgenetic Alopecia</a></li>
+                   <li><a href="#contact" className="hover:text-white transition">Consultation</a></li>
                  </ul>
                </div>
 
@@ -77,7 +76,7 @@ export default function Footer() {
          </div>
 
          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-           <p>Copyright © 2024 All Rights Reserved | Hairise Made by ThemeHt.</p>
+           <p>Copyright © 2026 All Rights Reserved | Hairise.</p>
            <button className="w-10 h-10 bg-white text-slate-900 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
              <ArrowUp size={16} />
            </button>

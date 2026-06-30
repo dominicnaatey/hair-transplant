@@ -4,10 +4,10 @@ import { FacebookIcon, TwitterIcon, InstagramIcon } from './BrandIcons';
 
 export default function Header() {
   return (
-    <header className="absolute top-0 w-full z-50 flex items-center justify-between px-6 lg:px-12 py-6 text-white border-b border-white/10">
+    <header className="absolute top-0 w-full z-50 flex items-center justify-between px-6 lg:px-12 py-6 text-white border-b border-white/10 bg-slate-950/10 backdrop-blur-md shadow-[0_10px_30px_rgba(15,23,42,0.10)]">
       
       {/* Logo */}
-      <div className="flex items-center gap-3">
+      <a href="#home" className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
           {/* Simple logo mark */}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -15,16 +15,18 @@ export default function Header() {
           </svg>
         </div>
         <span className="text-2xl font-bold font-serif tracking-wide">Hairise</span>
-      </div>
+      </a>
 
       {/* Desktop Nav */}
       <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wider">
-        <a href="#" className="bg-white text-slate-900 px-4 py-1.5 rounded uppercase">Home</a>
-        <a href="#" className="hover:text-blue-200 transition uppercase">Pages</a>
-        <a href="#" className="hover:text-blue-200 transition uppercase">Services</a>
-        <a href="#" className="hover:text-blue-200 transition uppercase">Portfolio</a>
-        <a href="#" className="hover:text-blue-200 transition uppercase">Blog</a>
-        <a href="#" className="hover:text-blue-200 transition uppercase">Contact Us</a>
+        <a href="#home" className="bg-white text-slate-900 px-4 py-1.5 rounded uppercase">Home</a>
+        <a href="#services" className="hover:text-blue-200 transition uppercase">Services</a>
+        <a href="#solutions" className="hover:text-blue-200 transition uppercase">Solutions</a>
+        <a href="#diagnosis" className="hover:text-blue-200 transition uppercase">Diagnosis</a>
+        <a href="#results" className="hover:text-blue-200 transition uppercase">Results</a>
+        <a href="#contact" className="hover:text-blue-200 transition uppercase">Contact</a>
+        {/* Blog link temporarily hidden while blog pages are not being added. */}
+        {/* <a href="#blog" className="hover:text-blue-200 transition uppercase">Blog</a> */}
       </nav>
 
       {/* Right Actions */}
@@ -39,9 +41,9 @@ export default function Header() {
           <Phone size={16} />
           <span>+91-234-567-8900</span>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition">
+        <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition">
           Appointment
-        </button>
+        </a>
         <LayoutGrid size={24} className="lg:hidden cursor-pointer" />
       </div>
     </header>

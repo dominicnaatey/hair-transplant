@@ -4,10 +4,13 @@ import { ArrowUp } from 'lucide-react';
 
 export default function CaseStudies() {
   return (
-    <section className="container mx-auto px-6 lg:px-12 py-32 bg-[#F9F7F2]">
-      <div className="text-center mb-16">
-        <span className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-4 block">Research</span>
-        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-slate-900 mb-6">Latest From Case Studies</h2>
+    <section className="container mx-auto px-6 lg:px-12 py-28 lg:py-32 bg-[#F9F7F2]">
+      <div className="text-center mb-14 lg:mb-16">
+        <span className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-4 block">Clinical Results</span>
+        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-slate-900 mb-4">Latest From Case Studies</h2>
+        <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          A closer look at how tailored treatment plans and precise care create natural, confidence-restoring outcomes.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,7 +57,7 @@ export default function CaseStudies() {
       </div>
 
       <div className="text-center mt-16 text-slate-500 font-medium">
-        Some select projects that showcase. <a href="#" className="border-b-2 border-blue-600 text-blue-600 pb-1 ms-1 hover:text-blue-700 transition">View all</a>
+        See how our approach supports long-term growth and confidence. <a href="#contact" className="border-b-2 border-blue-600 text-blue-600 pb-1 ms-1 hover:text-blue-700 transition">Book a consultation</a>
       </div>
     </section>
   );

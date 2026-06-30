@@ -4,7 +4,7 @@ import { ArrowUp } from 'lucide-react';
 
 export default function SolutionsSection() {
   return (
-    <section className="container mx-auto px-6 lg:px-12 py-16 space-y-12">
+    <section className="container mx-auto px-6 lg:px-12 py-20 lg:py-24 space-y-8 lg:space-y-10">
       
       {/* Box 1 */}
       <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.02)]">
@@ -31,7 +31,7 @@ export default function SolutionsSection() {
       </div>
 
       {/* Box 2 */}
-      <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.02)]">
+      <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_30px_70px_-24px_rgba(15,23,42,0.12)]">
         <div className="lg:w-1/2 relative z-10 lg:order-1">
           <h2 className="text-3xl lg:text-4xl font-bold font-serif text-slate-900 mb-6">Amazing results, every time</h2>
           <p className="text-slate-500 mb-8 max-w-md leading-relaxed">

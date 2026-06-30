@@ -20,11 +20,22 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   color-scheme: light;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: #0f172a;
 }
 
 @keyframes marquee {
@@ -34,5 +45,86 @@ body {
   100% {
     transform: translateX(-50%);
   }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 700ms ease-out both;
+}
+
+.animate-soft-scale {
+  animation: softScale 700ms ease-out both;
+}
+
+.section-reveal {
+  animation: fadeUp 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-safe {
+  will-change: transform, opacity;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+button,
+input,
+select,
+textarea {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
 
