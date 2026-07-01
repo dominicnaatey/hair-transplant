@@ -31,7 +31,7 @@ export default function WelcomeSection() {
       <div className="lg:w-1/3 flex justify-center relative">
          <div className="absolute inset-0 bg-gradient-to-br from-blue-100/60 via-transparent to-transparent rounded-full blur-3xl" />
          <Image 
-           src="https://placehold.co/600x800/EAE7DE/A3B18A?text=Hair+Follicle+Diagram" 
+           src="/images/hair_follicle_diagram.png" 
            alt="Skin and Hair Follicle Anatomy Diagram" 
            width={350} height={450} 
            className="w-full max-w-[320px] object-contain relative z-10 drop-shadow-[0_20px_35px_rgba(15,23,42,0.12)]"

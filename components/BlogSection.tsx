@@ -54,7 +54,7 @@ export default function BlogSection() {
          {/* Blog 3 */}
          <div className="group cursor-pointer rounded-[2rem] border border-slate-100 bg-white/80 p-4 shadow-[0_20px_45px_-24px_rgba(15,23,42,0.24)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_-24px_rgba(15,23,42,0.28)]">
            <div className="relative rounded-[1.5rem] overflow-hidden aspect-[16/10] mb-6">
-              <Image src="https://placehold.co/600x400/EAE7DE/A3B18A?text=Hair+Treatment" alt="Blog 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/hair_treatment.png" alt="Blog 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
               <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 text-slate-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <ArrowUp className="rotate-45" size={18} />

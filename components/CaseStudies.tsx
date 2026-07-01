@@ -43,7 +43,7 @@ export default function CaseStudies() {
 
          {/* Case 3 */}
          <div className="relative group rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg cursor-pointer">
-           <Image src="https://placehold.co/600x800/EAE7DE/A3B18A?text=Patient+Head+Markings" alt="Case Study 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+           <Image src="/images/patient_markings.png" alt="Case Study 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-80" />
            <div className="absolute inset-0 p-8 flex flex-col justify-end">
              <span className="text-white text-[10px] font-bold uppercase tracking-widest mb-2 border border-white/30 rounded-full px-3 py-1 w-max">Clinical Research</span>
