@@ -2,9 +2,26 @@
 
 import Link from 'next/link';
 
-const quickLinks = ['About Us', 'Team Member', 'Our History', 'FAQ', 'Contact'];
-const servicesLinks = ['Hair Loss Diagnosis', 'Beard Restoration', 'Androgenetic Alopecia', 'Prosthetic Hair', 'Hair Reconstruction'];
-const resourceLinks = ['Privacy Policy', 'Terms And Conditions', 'Career', 'How We Work', 'Knowledge Base'];
+const quickLinks = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Team Member', href: '/team' },
+  { label: 'Our History', href: '/history' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+];
+const servicesLinks = [
+  { label: 'Hair Loss Diagnosis', href: '/services' },
+  { label: 'Beard Restoration', href: '/services' },
+  { label: 'Androgenetic Alopecia', href: '/services' },
+  { label: 'Prosthetic Hair', href: '/services' },
+  { label: 'Hair Reconstruction', href: '/services' },
+];
+const resourceLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms And Conditions', href: '/terms-and-conditions' },
+  { label: 'How We Work', href: '/how-we-work' },
+  { label: 'Knowledge Base', href: '/knowledge-base' },
+];
 
 export default function Footer() {
   return (
@@ -121,13 +138,13 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <FooterLinkCol title="Quick Links" items={quickLinks.map((l) => ({ label: l, href: '#' }))} />
+          <FooterLinkCol title="Quick Links" items={quickLinks} />
 
           {/* Services */}
-          <FooterLinkCol title="Services" items={servicesLinks.map((l) => ({ label: l, href: '/services' }))} />
+          <FooterLinkCol title="Services" items={servicesLinks} />
 
           {/* Resource */}
-          <FooterLinkCol title="Resource" items={resourceLinks.map((l) => ({ label: l, href: '#' }))} />
+          <FooterLinkCol title="Resource" items={resourceLinks} />
         </div>
       </div>
 
