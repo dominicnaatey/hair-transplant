@@ -7,7 +7,7 @@ import Image from 'next/image';
 const steps = [
   {
     title: 'Hair Loss Solutions',
-    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    body: 'We provide comprehensive diagnostics to uncover the root cause of your hair loss. Our specialized treatments in Ghana are tailored to restore your hair naturally.',
     col1Title: 'Hairgrowth Cycle',
     col1Items: ['Affordable Prices', 'Advanced Techniques'],
     col2Title: 'Types Of Hair Loss',
@@ -16,7 +16,7 @@ const steps = [
   },
   {
     title: 'Amazing Results, Every Time',
-    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    body: 'Experience the transformative power of our state-of-the-art procedures. We ensure maximum graft survival and minimal downtime for all our patients.',
     col1Title: 'FUE Technique',
     col1Items: ['Painless Extraction', 'Minimal Scarring'],
     col2Title: 'Recovery & Growth',
@@ -25,7 +25,7 @@ const steps = [
   },
   {
     title: 'Natural Looking Results',
-    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    body: 'Our surgeons artfully design hairlines that complement your facial structure. The result is a seamless, natural look that lasts a lifetime.',
     col1Title: 'Follicle Placement',
     col1Items: ['Hairline Design', 'Density Control'],
     col2Title: 'Post-Op Care',

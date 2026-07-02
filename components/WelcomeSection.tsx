@@ -31,8 +31,7 @@ export default function WelcomeSection() {
             </div>
 
             <p className="mb-6" style={{ color: '#666', fontSize: 17, lineHeight: '27px' }}>
-              Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et
-              sollicitudin ac orci phasellus. We combine precision science with compassionate care.
+              As Ghana's premier hair restoration clinic, we are dedicated to helping you regain your confidence. We combine precision science with compassionate care to deliver natural, life-long results.
             </p>
 
             <ul className="mb-8 space-y-3">

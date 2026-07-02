@@ -32,8 +32,8 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontSize: 15, lineHeight: '26px', maxWidth: 340, marginBottom: 24 }}>
-              Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin.
-              We restore confidence through precision and care.
+              Hairise is Ghana's leading hair transplant and restoration center.
+              We restore confidence through precision, innovation, and care.
             </p>
             {/* Social icons */}
             <div className="flex gap-3">

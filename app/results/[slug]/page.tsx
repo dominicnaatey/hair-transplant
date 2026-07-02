@@ -50,10 +50,10 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ s
                 Project Overview
               </h2>
               <p className="text-[#555] leading-relaxed mb-8 text-lg">
-                Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit. Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus.
+                This case study highlights our approach to restoring a natural, dense hairline for patients experiencing advanced stages of androgenetic alopecia. Our primary goal was to achieve maximum coverage while maintaining a completely undetectable transition between the native hair and the transplanted grafts.
               </p>
               <p className="text-[#555] leading-relaxed mb-12 text-lg">
-                Massa massa ultricies mi quis hendrerit. Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus.
+                The patient underwent a comprehensive consultation at our Ghana clinic, where our specialists mapped out a personalized restoration strategy utilizing the latest in FUE technology to ensure optimal graft survival and rapid recovery.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -87,7 +87,7 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ s
                 The Challenge & Solution
               </h3>
               <p className="text-[#555] leading-relaxed mb-8 text-lg">
-                Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit. Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus.
+                The main challenge was the limited donor area relative to the extensive thinning on the crown and frontal regions. Our solution involved a meticulously planned extraction process, preserving the donor zone's density while strategically placing grafts to create the illusion of overall thickness.
               </p>
               
               <ul className="space-y-4 mb-12">

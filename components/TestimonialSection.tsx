@@ -10,7 +10,7 @@ import { section } from 'framer-motion/client';
 
 const testimonials = [
   {
-    quote: "Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit Vestibulum morbi blandit cursus risus.",
+    quote: "My experience at Hairise was outstanding. The attention to detail and personalized care from the doctors made me feel completely at ease throughout the entire process.",
     name: 'Simon Amour',
     role: 'Technical Director',
     avatar: '/images/testimonial_avatar_1.png',
@@ -39,8 +39,8 @@ const features = [
         <path d="M32 8c-8.84 0-16 7.16-16 16 0 5.2 2.48 9.8 6.32 12.7L19.5 52h25l-2.82-15.3C45.52 33.8 48 29.2 48 24c0-8.84-7.16-16-16-16zm0 6a10 10 0 11-.001 20.001A10 10 0 0132 14z" />
       </svg>
     ),
-    title: 'Hair Loss Medication',
-    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus.',
+    title: 'Modern Clinic Facilities',
+    desc: 'Our state-of-the-art clinic in Ghana is equipped with the latest technology for precise and comfortable treatments.',
   },
   {
     icon: (
@@ -49,8 +49,8 @@ const features = [
         <circle cx="32" cy="32" r="4" />
       </svg>
     ),
-    title: 'Advanced Dandruff Treatment',
-    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus.',
+    title: 'Expert Medical Team',
+    desc: 'Our highly trained professionals ensure that every step of your hair restoration journey meets international standards.',
   },
 ];
 
