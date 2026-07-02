@@ -1,111 +1,265 @@
-import React from 'react';
+"use client";
+
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUp } from 'lucide-react';
+
+const steps = [
+  {
+    title: 'Hair Loss Solutions',
+    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    col1Title: 'Hairgrowth Cycle',
+    col1Items: ['Affordable Prices', 'Advanced Techniques'],
+    col2Title: 'Types Of Hair Loss',
+    col2Items: ['International Standards', 'Life Long Results'],
+    image: '/images/hair_treatment.png',
+  },
+  {
+    title: 'Amazing Results, Every Time',
+    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    col1Title: 'FUE Technique',
+    col1Items: ['Painless Extraction', 'Minimal Scarring'],
+    col2Title: 'Recovery & Growth',
+    col2Items: ['Full Results in 12 Months', '98% Graft Survival'],
+    image: '/images/solutions_1.png',
+  },
+  {
+    title: 'Natural Looking Results',
+    body: 'Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.',
+    col1Title: 'Follicle Placement',
+    col1Items: ['Hairline Design', 'Density Control'],
+    col2Title: 'Post-Op Care',
+    col2Items: ['24/7 Specialist Support', 'Personalised Protocol'],
+    image: '/images/solutions_2.png',
+  },
+];
 
 export default function SolutionsSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let gsapCtx: { revert: () => void } | undefined;
+
+    const initGSAP = async () => {
+      const { default: gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (!containerRef.current) return;
+
+      const cards = Array.from(containerRef.current.querySelectorAll<HTMLElement>('.step-box'));
+
+      const mm = gsap.matchMedia();
+      mm.add('(min-width: 1024px)', () => {
+        cards.forEach((card, index) => {
+          // We only animate if there's a card after this one to cover it
+          if (index < cards.length - 1) {
+            const inner = card.querySelector('.step-inner');
+            const nextCard = cards[index + 1];
+
+            if (inner && nextCard) {
+              gsap.to(inner, {
+                scrollTrigger: {
+                  trigger: nextCard, // Animate when the NEXT card scrolls up
+                  start: 'top bottom', // Start when the next card enters the bottom of the screen
+                  end: 'top center', // Finish when it reaches the middle of the screen
+                  scrub: 1, // 1 second smoothing makes it extremely fluid
+                },
+                ease: 'none',
+                scale: 0.94, // Subtle compression
+                opacity: 0.4, // Fade out as it gets covered
+              });
+            }
+          }
+        });
+      });
+
+      gsapCtx = { revert: () => mm.revert() };
+    };
+
+    initGSAP();
+
+    return () => gsapCtx?.revert();
+  }, []);
+
   return (
-    <section className="container mx-auto px-6 lg:px-12 py-20 lg:py-24 space-y-8 lg:space-y-10">
-      
-      {/* Box 1 */}
-      <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.02)]">
-        <div className="lg:w-1/2 relative z-10">
-          <h2 className="text-3xl lg:text-4xl font-bold font-serif text-slate-900 mb-6">Hair Loss Solutions</h2>
-          <p className="text-slate-500 mb-8 max-w-md leading-relaxed">
-            Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.
-          </p>
-          <div className="flex gap-8 border-b border-slate-200">
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-900 border-b-2 border-slate-900 pb-3 -mb-[2px]">Hairgrowth Cycle</button>
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-400 hover:text-slate-600 transition pb-3">Types Of Hair Loss</button>
-          </div>
+    <section className="w-full py-24" style={{ background: '#FFFFFF' }}>
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+        {/* Section heading */}
+        <div className="mb-16">
+          <span
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: '0.28em',
+              textTransform: 'uppercase',
+              color: '#2458B3',
+              marginBottom: 12,
+              display: 'block',
+            }}
+          >
+            Solutions
+          </span>
+          <h2
+            style={{
+              fontFamily: 'var(--font-chivo), Chivo, serif',
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 500,
+              color: '#222',
+              lineHeight: '1.2',
+            }}
+          >
+            Hair Loss Solutions
+          </h2>
         </div>
-        <div className="lg:w-1/2 w-full mt-8 lg:mt-0 relative flex justify-end">
-          <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[12px] border-[#F9F7F2] shadow-xl relative lg:-right-8">
-            <Image 
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" 
-              alt="Doctor examining scalp with tool" 
-              fill
-              className="object-cover"
-            />
-          </div>
+
+        {/* Sticky step cards */}
+        <div ref={containerRef} className="space-y-6 pb-12">
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              className="step-box"
+              style={{
+                position: 'sticky',
+                top: `calc(120px + ${i * 24}px)`,
+                zIndex: i,
+              }}
+            >
+              <div 
+                className="step-inner relative overflow-hidden"
+                style={{
+                  borderRadius: 12,
+                  border: '1px solid #e8e4dc',
+                  minHeight: 320,
+                  backgroundColor: '#ffffff',
+                  boxShadow: i > 0 ? '0 -10px 20px rgba(0,0,0,0.02)' : 'none',
+                  transformOrigin: 'top center',
+                }}
+              >
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-[320px]">
+                {/* Content */}
+                <div className="p-10 lg:p-14 flex flex-col justify-center">
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-chivo), Chivo, serif',
+                      fontSize: 'clamp(26px, 3vw, 38px)',
+                      fontWeight: 500,
+                      color: '#222',
+                      marginBottom: 16,
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p style={{ color: '#666', lineHeight: '27px', marginBottom: 28, maxWidth: 560 }}>
+                    {step.body}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-8">
+                    {/* Col 1 */}
+                    <div>
+                      <h5
+                        style={{
+                          fontFamily: 'var(--font-chivo), Chivo, serif',
+                          fontSize: 18,
+                          fontWeight: 500,
+                          color: '#222',
+                          marginBottom: 12,
+                        }}
+                      >
+                        {step.col1Title}
+                      </h5>
+                      <ul className="space-y-2">
+                        {step.col1Items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-center gap-2"
+                            style={{ fontSize: 14, color: '#666' }}
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {/* Col 2 */}
+                    <div>
+                      <h5
+                        style={{
+                          fontFamily: 'var(--font-chivo), Chivo, serif',
+                          fontSize: 18,
+                          fontWeight: 500,
+                          color: '#222',
+                          marginBottom: 12,
+                        }}
+                      >
+                        {step.col2Title}
+                      </h5>
+                      <ul className="space-y-2">
+                        {step.col2Items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-center gap-2"
+                            style={{ fontSize: 14, color: '#666' }}
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="relative hidden lg:block" style={{ minHeight: 320 }}>
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-cover"
+                    sizes="320px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
+                </div>
+              </div>
+
+              {/* Corner button-style-2 */}
+              <div className="button-style-2">
+                <svg viewBox="0 0 100 100" style={{ width: 40, height: 40 }}>
+                  <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
+                </svg>
+                <Link href="/contact" className="button-style-2-link" aria-label="Contact us">
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </Link>
+                <svg viewBox="0 0 100 100" style={{ width: 40, height: 40, transform: 'scaleX(-1)' }}>
+                  <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
+                </svg>
+              </div>
+
+              {/* Step number badge */}
+              <div
+                className="absolute top-10 right-10 lg:right-[340px]"
+                style={{
+                  fontFamily: 'var(--font-chivo), Chivo, serif',
+                  fontSize: 120,
+                  fontWeight: 700,
+                  color: 'rgba(36,88,179,0.04)',
+                  lineHeight: 1,
+                  userSelect: 'none',
+                  pointerEvents: 'none',
+                }}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              
+              </div> {/* Close step-inner */}
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Box 2 */}
-      <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_30px_70px_-24px_rgba(15,23,42,0.12)]">
-        <div className="lg:w-1/2 relative z-10 lg:order-1">
-          <h2 className="text-3xl lg:text-4xl font-bold font-serif text-slate-900 mb-6">Amazing results, every time</h2>
-          <p className="text-slate-500 mb-8 max-w-md leading-relaxed">
-            Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.
-          </p>
-          <div className="flex gap-8 border-b border-slate-200 mb-6">
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-900 border-b-2 border-slate-900 pb-3 -mb-[2px]">Hairgrowth Cycle</button>
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-400 hover:text-slate-600 transition pb-3">Types Of Hair Loss</button>
-          </div>
-          <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Affordable Prices
-             </li>
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> International Standards
-             </li>
-          </ul>
-        </div>
-        <div className="lg:w-1/2 w-full mt-8 lg:mt-0 relative flex justify-start lg:order-0">
-           {/* Offset circle visually */}
-           <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[12px] border-[#F9F7F2] shadow-xl relative lg:-left-8">
-            <Image 
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" 
-              alt="Two doctors conversing" 
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Box 3 */}
-      <div className="relative bg-white border border-slate-100 rounded-[2.5rem] lg:rounded-[4rem] p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.02)]">
-        <div className="lg:w-1/2 relative z-10">
-          <h2 className="text-3xl lg:text-4xl font-bold font-serif text-slate-900 mb-6">Natural Looking Results</h2>
-          <p className="text-slate-500 mb-8 max-w-md leading-relaxed">
-            Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa massa ultricies mi quis hendrerit.
-          </p>
-          <div className="flex gap-8 border-b border-slate-200 mb-6">
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-400 hover:text-slate-600 transition pb-3">Hairgrowth Cycle</button>
-            <button className="font-bold text-sm uppercase tracking-wider text-slate-900 border-b-2 border-slate-900 pb-3 -mb-[2px]">Types Of Hair Loss</button>
-          </div>
-          <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Affordable Prices
-             </li>
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> International Standards
-             </li>
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Advanced Techniques
-             </li>
-             <li className="flex items-center gap-2 text-sm text-slate-700 font-medium">
-               <div className="w-1.5 h-1.5 rounded-full bg-blue-600" /> Life Long Results
-             </li>
-          </ul>
-        </div>
-        <div className="lg:w-1/2 w-full mt-8 lg:mt-0 relative flex justify-end">
-           <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[12px] border-[#F9F7F2] shadow-xl relative lg:-right-8">
-            <Image 
-              src="https://images.unsplash.com/photo-1584820927498-cafe4c23dbfa?auto=format&fit=crop&q=80&w=800" 
-              alt="Patient after procedure" 
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Decorative arrow floating nearby */}
-          <div className="absolute -bottom-4 right-16 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-blue-600">
-             <ArrowUp className="rotate-45" size={20} />
-          </div>
-        </div>
-      </div>
-
     </section>
   );
 }

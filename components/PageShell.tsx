@@ -1,32 +1,104 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
-type PageShellProps = {
+interface PageShellProps {
   title: string;
-  description?: string;
-  children: React.ReactNode;
-};
+  subtitle?: string;
+  children: ReactNode;
+  breadcrumbs?: { label: string; href?: string }[];
+}
 
-export default function PageShell({ title, description, children }: PageShellProps) {
+export default function PageShell({ title, subtitle, children, breadcrumbs = [] }: PageShellProps) {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <div className="absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_52%)]" />
+    <>
       <Header />
-      <section className="relative px-6 pb-24 pt-36 sm:pt-40 lg:px-12">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-6 inline-flex items-center rounded-full border border-slate-200/80 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-blue-600 shadow-sm backdrop-blur">
-            Hairise / {title}
-          </div>
-          <div className="max-w-3xl">
-            <h1 className="mb-5 text-4xl font-bold font-serif text-slate-900 sm:text-5xl lg:text-6xl">{title}</h1>
-            {description ? <p className="text-lg leading-relaxed text-slate-600 sm:text-xl">{description}</p> : null}
-          </div>
-          <div className="mt-12 rounded-[2rem] border border-slate-200/80 bg-white/80 p-6 shadow-[0_25px_80px_-35px_rgba(15,23,42,0.35)] backdrop-blur sm:p-8 lg:p-10">
-            {children}
-          </div>
+
+      {/* ─── Page Banner ─── */}
+      <section className="page-banner">
+        <div className="page-banner-overlay" />
+
+        {/* Decorative circles */}
+        <div
+          className="absolute animate-float pointer-events-none"
+          style={{
+            top: '20%',
+            right: '15%',
+            width: 200,
+            height: 200,
+            borderRadius: '50%',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}
+        />
+        <div
+          className="absolute animate-float-slow pointer-events-none"
+          style={{
+            top: '40%',
+            right: '30%',
+            width: 120,
+            height: 120,
+            borderRadius: '50%',
+            border: '1px solid rgba(36,88,179,0.3)',
+          }}
+        />
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            bottom: '-40px',
+            left: '10%',
+            width: 300,
+            height: 300,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(36,88,179,0.2), transparent 70%)',
+          }}
+        />
+
+        <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-12">
+          {/* Breadcrumb */}
+          {breadcrumbs.length > 0 && (
+            <nav className="flex items-center gap-0 mb-6" aria-label="Breadcrumb">
+              <Link href="/" className="breadcrumb-item hover:text-white transition-colors">
+                Home
+              </Link>
+              {breadcrumbs.map((crumb, i) => (
+                <span key={i} className="flex items-center">
+                  <span className="breadcrumb-separator">/</span>
+                  {crumb.href && i < breadcrumbs.length - 1 ? (
+                    <Link href={crumb.href} className="breadcrumb-item hover:text-white transition-colors">
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span className="breadcrumb-item active">{crumb.label}</span>
+                  )}
+                </span>
+              ))}
+            </nav>
+          )}
+
+          {/* Title */}
+          <h1 className="mb-4" style={{ fontFamily: 'var(--font-chivo), Chivo, serif' }}>{title}</h1>
+
+          {subtitle && (
+            <p
+              style={{
+                fontFamily: 'var(--font-dm-sans)',
+                fontSize: 18,
+                color: 'rgba(255,255,255,0.65)',
+                maxWidth: 560,
+                lineHeight: '28px',
+              }}
+            >
+              {subtitle}
+            </p>
+          )}
         </div>
       </section>
+
+      {/* ─── Page Content ─── */}
+      <main className="w-full">{children}</main>
+
       <Footer />
-    </main>
+    </>
   );
 }

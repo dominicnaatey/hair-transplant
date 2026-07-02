@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Chivo } from "next/font/google";
 import RouteTransition from '@/components/RouteTransition';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const chivo = Chivo({
+  variable: "--font-chivo",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Hairise | Hair Transplant Clinic",
-  description: "Modern hair transplant solutions with proven results and compassionate care.",
+  description: "Modern hair transplant solutions with proven results and compassionate care — from diagnosis to full recovery.",
+  keywords: "hair transplant, hair restoration, hair loss treatment, FUE, PRP, baldness treatment",
 };
 
 export default function RootLayout({
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${chivo.variable} h-full antialiased`}
       style={{ colorScheme: 'light' }}
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>

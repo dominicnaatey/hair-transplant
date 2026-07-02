@@ -1,82 +1,113 @@
-import React from 'react';
 import Image from 'next/image';
-import { Star, LayoutGrid, ArrowUp } from 'lucide-react';
+import Link from 'next/link';
+import SplitText from './SplitText';
+
+const posts = [
+  {
+    category: 'DHT',
+    author: 'Dr. James Wilson',
+    title: 'Multivitamins and Hair Loss: The Ultimate Truth',
+    href: '/blog/multivitamins-hair-loss',
+    image: '/images/solutions_2.png',
+  },
+  {
+    category: 'Hair Care',
+    author: 'Dr. Sarah Chen',
+    title: 'Does Eyelash Grow Back: Dermatologist Answers',
+    href: '/blog/eyelash-grow-back',
+    image: '/images/diagnosis_1.png',
+  },
+  {
+    category: 'Hair Loss',
+    author: 'Dr. Michael Osei',
+    title: 'What is Implanter Pen in DHT Hair Transplant?',
+    href: '/blog/implanter-pen-dht',
+    image: '/images/diagnosis_2.png',
+  },
+];
 
 export default function BlogSection() {
   return (
-    <section className="container mx-auto px-6 lg:px-12 py-24 pb-32">
-      <div className="text-center mb-14 lg:mb-16">
-        <span className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-4 block">Our Blog</span>
-        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-slate-900 mb-4">Explore our Latest Insights</h2>
-        <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Helpful guidance on hair health, recovery, and the latest treatment approaches for lasting confidence.
-        </p>
-      </div>
+    <section className="w-full py-24" style={{ background: '#FFFFFF' }}>
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <span
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: '0.28em',
+              textTransform: 'uppercase',
+              color: '#2458B3',
+              marginBottom: 12,
+              display: 'block',
+            }}
+          >
+            Our Blog
+          </span>
+          <SplitText
+            text="Explore our Latest Post"
+            as="h2"
+            delay={40}
+            className="inline-block"
+          />
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-         
-         {/* Blog 1 */}
-         <div className="group cursor-pointer rounded-[2rem] border border-slate-100 bg-white/80 p-4 shadow-[0_20px_45px_-24px_rgba(15,23,42,0.24)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_-24px_rgba(15,23,42,0.28)]">
-           <div className="relative rounded-[1.5rem] overflow-hidden aspect-[16/10] mb-6">
-              <Image src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=600" alt="Blog 1" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
-              <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 text-slate-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUp className="rotate-45" size={18} />
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post, i) => (
+            <article key={i} className="post-card group">
+              {/* Image */}
+              <div className="post-image relative">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={700}
+                  height={408}
+                  className="w-full object-cover"
+                  style={{ aspectRatio: '16/10' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                {/* Hover button */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-10">
+                  <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
+                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#2458B3" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-           </div>
-           <div className="flex gap-4 mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <span className="flex items-center gap-1.5"><Star size={14} className="text-blue-600" /> Admin</span>
-              <span className="flex items-center gap-1.5"><LayoutGrid size={14} className="text-blue-600" /> DHT</span>
-           </div>
-           <h3 className="text-xl font-bold font-serif text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
-             Multivitamins and Hair Loss: What Actually Helps
-           </h3>
-         </div>
 
-         {/* Blog 2 */}
-         <div className="group cursor-pointer rounded-[2rem] border border-slate-100 bg-white/80 p-4 shadow-[0_20px_45px_-24px_rgba(15,23,42,0.24)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_-24px_rgba(15,23,42,0.28)]">
-           <div className="relative rounded-[1.5rem] overflow-hidden aspect-[16/10] mb-6">
-              <Image src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" alt="Blog 2" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
-              <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 text-slate-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUp className="rotate-45" size={18} />
+              {/* Text */}
+              <div className="post-desc">
+                <div className="post-meta">
+                  <span className="flex items-center gap-1">
+                    <PersonIcon className="w-3.5 h-3.5" />
+                    {post.author}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <TagIcon className="w-3.5 h-3.5" />
+                    {post.category}
+                  </span>
+                </div>
+                <div className="post-title">
+                  <h4>
+                    <Link href={post.href}>{post.title}</Link>
+                  </h4>
+                </div>
               </div>
-           </div>
-           <div className="flex gap-4 mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <span className="flex items-center gap-1.5"><Star size={14} className="text-blue-600" /> Admin</span>
-              <span className="flex items-center gap-1.5"><LayoutGrid size={14} className="text-blue-600" /> Hair Care</span>
-           </div>
-           <h3 className="text-xl font-bold font-serif text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
-             Can Hair Recover After Thinning? A Clinician&apos;s View
-           </h3>
-         </div>
-
-         {/* Blog 3 */}
-         <div className="group cursor-pointer rounded-[2rem] border border-slate-100 bg-white/80 p-4 shadow-[0_20px_45px_-24px_rgba(15,23,42,0.24)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_70px_-24px_rgba(15,23,42,0.28)]">
-           <div className="relative rounded-[1.5rem] overflow-hidden aspect-[16/10] mb-6">
-              <Image src="/images/hair_treatment.png" alt="Blog 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
-              <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 text-slate-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUp className="rotate-45" size={18} />
-              </div>
-           </div>
-           <div className="flex gap-4 mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <span className="flex items-center gap-1.5"><Star size={14} className="text-blue-600" /> Admin</span>
-              <span className="flex items-center gap-1.5"><LayoutGrid size={14} className="text-blue-600" /> Hair Loss</span>
-           </div>
-           <h3 className="text-xl font-bold font-serif text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
-             What to Expect From a Modern Hair Transplant Journey
-           </h3>
-         </div>
-
-      </div>
-
-      <div className="text-center mt-12">
-        <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wider text-slate-700 transition hover:border-blue-200 hover:text-blue-600 hover:shadow-[0_15px_35px_-20px_rgba(59,130,246,0.5)]">
-          Ask us anything
-          <ArrowUp className="rotate-45" size={14} />
-        </a>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
+}
+
+function PersonIcon({ className = '' }) {
+  return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>;
+}
+function TagIcon({ className = '' }) {
+  return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" /></svg>;
 }

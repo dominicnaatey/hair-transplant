@@ -1,23 +1,31 @@
-import React from 'react';
-
 export default function MarqueeBanner() {
+  const items = Array.from({ length: 16 }, (_, i) => i);
+
   return (
-    <div className="py-8 bg-white/80 border-y border-slate-100 overflow-hidden flex whitespace-nowrap mb-0 mt-16 select-none relative z-10 backdrop-blur-sm shadow-[0_8px_30px_-18px_rgba(15,23,42,0.2)]">
-      <div className="animate-[marquee_20s_linear_infinite] flex items-center gap-8">
-        {[...Array(6)].map((_, i) => (
-          <React.Fragment key={i}>
-            <span className="text-slate-900 font-serif font-bold text-2xl tracking-wide">SERVICE WE PROVIDE</span>
-            <span className="text-blue-600 font-bold text-2xl">✻</span>
-          </React.Fragment>
-        ))}
-        {/* Duplicate for seamless looping */}
-         {[...Array(6)].map((_, i) => (
-          <React.Fragment key={`dup-${i}`}>
-            <span className="text-slate-900 font-serif font-bold text-2xl tracking-wide">SERVICE WE PROVIDE</span>
-            <span className="text-blue-600 font-bold text-2xl">✻</span>
-          </React.Fragment>
-        ))}
+    <section className="w-full overflow-hidden py-6" style={{ background: '#F9F8F6', borderTop: '1px solid #e8e4dc', borderBottom: '1px solid #e8e4dc' }}>
+      <div className="marquee-wrap">
+        <div className="marquee-inner">
+          {items.map((i) => (
+            <div
+              key={i}
+              className="flex items-center gap-6 flex-shrink-0 px-6"
+              style={{
+                fontFamily: 'var(--font-chivo), Chivo, serif',
+                fontSize: 'clamp(28px, 4vw, 48px)',
+                fontWeight: 500,
+                color: '#222222',
+                letterSpacing: '-0.01em',
+                lineHeight: '1.2',
+                paddingBottom: '4px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Service We Provide
+              <span className="inline-block w-2 h-2 rounded-full bg-[#2458B3] flex-shrink-0" />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

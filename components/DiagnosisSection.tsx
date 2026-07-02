@@ -1,52 +1,144 @@
-import React from 'react';
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const services = [
+  {
+    num: '01',
+    cat: 'Clinical Research',
+    title: 'Hair Loss Diagnosis',
+    image: '/images/diagnosis_1.png',
+  },
+  {
+    num: '02',
+    cat: 'Hair Loss',
+    title: 'Androgenetic Alopecia',
+    image: '/images/diagnosis_2.png',
+  },
+  {
+    num: '03',
+    cat: 'Transplant',
+    title: 'Prosthetic Hair',
+    image: '/images/diagnosis_3.png',
+  },
+  {
+    num: '04',
+    cat: 'Hair Research',
+    title: 'Beard Restoration',
+    image: '/images/diagnosis_4.png',
+  },
+];
 
 export default function DiagnosisSection() {
+  const [active, setActive] = useState(1); // default is item index 1 (like template)
+
   return (
-    <section className="bg-blue-600 text-white relative py-32 z-0">
-      {/* Subtle background texture/overlay like in reference image */}
-      <div className="absolute inset-0 opacity-10 mix-blend-overlay">
-         <Image 
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920" 
-            alt="" 
-            fill
-            className="object-cover"
-         />
-      </div>
-      <div className="absolute inset-0 bg-blue-600/90 mix-blend-multiply" />
+    <section
+      className="w-full py-24 relative overflow-hidden"
+      style={{ background: '#2458B3' }}
+    >
+      {/* BG overlay texture */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)' }}
+      />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 max-w-5xl">
-        <div className="flex flex-col gap-6">
-          
-          {[
-            { num: '01', sub: 'CLINICAL RESEARCH', title: 'Hair Loss Diagnosis', active: true },
-            { num: '02', sub: 'HAIR LOSS', title: 'Androgenetic Alopecia', active: false },
-            { num: '03', sub: 'TRANSPLANT', title: 'Prosthetic Hair', active: false },
-            { num: '04', sub: 'HAIR RESEARCH', title: 'Beard Restoration', active: false },
-          ].map((item, idx) => (
-             <div key={idx} className={`border-b border-white/20 pb-8 flex items-center gap-6 lg:gap-16 group cursor-pointer transition-all duration-300 ${item.active ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-               <span className="text-5xl lg:text-7xl font-serif font-bold text-white/40 group-hover:text-white/80 transition-colors w-24">
-                 {item.num}
-               </span>
-               <div className="flex-1 flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
-                  <div className="flex-1">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-blue-200 block mb-2">{item.sub}</span>
-                    <h3 className={`text-4xl lg:text-5xl font-serif font-bold lg:tracking-wider ${item.active ? 'text-white' : 'text-transparent bg-clip-text shadow-outline-white'}`}
-                        style={!item.active ? { WebkitTextStroke: '1px rgba(255,255,255,0.6)' } : {}}>
-                      {item.title}
-                    </h3>
-                  </div>
-                  
-                  {/* Hover Image Preview (only visible on active or hover conceptually, but let's show on active) */}
-                  {item.active && (
-                     <div className="hidden lg:block w-48 h-24 rounded-2xl overflow-hidden relative border-4 border-white shadow-xl rotate-3">
-                       <Image src="https://images.unsplash.com/photo-1584820927498-cafe4c23dbfa?auto=format&fit=crop&q=80&w=400" alt="Preview" fill className="object-cover" />
-                     </div>
-                  )}
-               </div>
-             </div>
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <div className="mb-14">
+          <span
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: '0.28em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.6)',
+              marginBottom: 12,
+              display: 'block',
+            }}
+          >
+            Our Services
+          </span>
+          <h2
+            style={{
+              fontFamily: 'var(--font-chivo), Chivo, serif',
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 500,
+              color: '#ffffff',
+              lineHeight: '1.15',
+            }}
+          >
+            Expert Hair Restoration<br />
+            <span style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.75)' }}>Services</span>
+          </h2>
+        </div>
+
+        {/* Service list */}
+        <div className="service-list">
+          {services.map((s, i) => (
+            <div
+              key={i}
+              className={`service-item-4 ${i === active ? 'active' : ''}`}
+              onMouseEnter={() => setActive(i)}
+              role="button"
+              tabIndex={0}
+              onFocus={() => setActive(i)}
+              aria-current={i === active}
+            >
+              {/* Number */}
+              <div className="service-num-4">{s.num}</div>
+
+              {/* Thumbnail - smooth layout reveal */}
+              <AnimatePresence>
+                {i === active && (
+                  <motion.div
+                    initial={{ width: 0, opacity: 0, scale: 0.8, rotate: -5 }}
+                    animate={{ width: 140, opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ width: 0, opacity: 0, scale: 0.8, rotate: -5 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="hidden md:block relative rounded-lg overflow-hidden flex-shrink-0 origin-left"
+                    style={{ height: 80 }}
+                  >
+                    <Image src={s.image} alt={s.title} fill className="object-cover" sizes="140px" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: '0.25em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255,255,255,0.5)',
+                    marginBottom: 6,
+                  }}
+                >
+                  {s.cat}
+                </div>
+                <div className="service-title-4">{s.title}</div>
+              </div>
+
+              {/* Arrow */}
+              <div
+                className="ml-auto flex-shrink-0 transition-all duration-300"
+                style={{
+                  opacity: i === active ? 1 : 0,
+                  transform: i === active ? 'translateX(0)' : 'translateX(-10px)',
+                }}
+              >
+                <div className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           ))}
-
         </div>
       </div>
     </section>

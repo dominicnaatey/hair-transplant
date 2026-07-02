@@ -1,78 +1,130 @@
-import React from 'react';
+"use client";
 import Image from 'next/image';
-import { CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import SplitText from './SplitText';
+import CountUp from 'react-countup';
+
+const stats = [
+  { end: 100, suffix: '%', title: 'Report Efficiency', desc: 'Consistent, reliable results measured across every single procedure.' },
+  { end: 200, suffix: 'k', title: 'Complete Cases', desc: 'Over two hundred thousand patients have regained confidence.' },
+  { end: 650, suffix: '+', title: 'Our Equipment', desc: 'State-of-the-art medical tools across all our specialist clinics.' },
+];
 
 export default function WelcomeSection() {
   return (
-    <section className="container mx-auto px-6 lg:px-12 py-20 lg:py-24 flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-16 lg:mb-24">
-      {/* Left Column - Text */}
-      <div className="lg:w-1/3">
-        <div className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-4">Better For You</div>
-        <h2 className="text-4xl lg:text-5xl font-serif font-bold text-slate-900 mb-6 leading-[1.2]">
-          Welcome to our<br/>Hair Transplant<br/>Center
-        </h2>
-        <p className="text-slate-600 mb-8 leading-relaxed max-w-lg">
-          We combine advanced medical techniques, careful diagnostics, and a calm clinical experience to deliver natural-looking results with confidence.
-        </p>
-        <ul className="space-y-4 mb-10">
-          <li className="flex items-center gap-3 text-sm text-slate-800 font-medium">
-            <CheckCircle2 className="text-blue-600" size={20} /> Best Clinic for safe Procedure
-          </li>
-          <li className="flex items-center gap-3 text-sm text-slate-800 font-medium">
-            <CheckCircle2 className="text-blue-600" size={20} /> Advanced Non-touch Bio FUE
-          </li>
-        </ul>
-        <a href="#contact" className="inline-flex bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition shadow-lg shadow-slate-900/10">
-          About Us
-        </a>
-      </div>
+    <section className="w-full py-28" style={{ background: '#FFFFFF' }}>
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
 
-      {/* Middle Column - Illustration */}
-      <div className="lg:w-1/3 flex justify-center relative">
-         <div className="absolute inset-0 bg-gradient-to-br from-blue-100/60 via-transparent to-transparent rounded-full blur-3xl" />
-         <Image 
-           src="/images/hair_follicle_diagram.png" 
-           alt="Skin and Hair Follicle Anatomy Diagram" 
-           width={350} height={450} 
-           className="w-full max-w-[320px] object-contain relative z-10 drop-shadow-[0_20px_35px_rgba(15,23,42,0.12)]"
-         />
-      </div>
+          {/* ─── Col 1: Text ─── */}
+          <div>
+            <div className="theme-title mb-6">
+              <h6 style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2458B3', marginBottom: 14 }}>
+                Better For You
+              </h6>
+              <SplitText
+                text="Welcome to our Hair Transplant Center"
+                as="h2"
+                className="ht-split-text"
+                delay={40}
+              />
+            </div>
 
-      {/* Right Column - Stats */}
-      <div className="lg:w-1/3 flex flex-col gap-10">
-         {/* Stat 1 */}
-         <div className="flex items-start gap-5">
-           <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-lg shadow-blue-600/30">
-             100%
-           </div>
-           <div>
-             <h4 className="font-bold text-slate-900 text-lg mb-1 font-serif">Report Efficiency</h4>
-             <p className="text-slate-500 text-sm leading-relaxed">Vestibulum morbi blandit cursus risus. Augue neque gravida.</p>
-           </div>
-         </div>
-         
-         {/* Stat 2 */}
-         <div className="flex items-start gap-5 rounded-2xl border border-slate-100 bg-white/70 p-4 shadow-[0_20px_45px_-20px_rgba(15,23,42,0.2)]">
-           <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-lg shadow-blue-600/30">
-             200k
-           </div>
-           <div>
-             <h4 className="font-bold text-slate-900 text-lg mb-1 font-serif">Complete Cases</h4>
-             <p className="text-slate-500 text-sm leading-relaxed">Vestibulum morbi blandit cursus risus. Augue neque gravida.</p>
-           </div>
-         </div>
+            <p className="mb-6" style={{ color: '#666', fontSize: 17, lineHeight: '27px' }}>
+              Vestibulum morbi blandit cursus risus. Augue neque gravida in fermentum et
+              sollicitudin ac orci phasellus. We combine precision science with compassionate care.
+            </p>
 
-         {/* Stat 3 */}
-         <div className="flex items-start gap-5 rounded-2xl border border-slate-100 bg-white/70 p-4 shadow-[0_20px_45px_-20px_rgba(15,23,42,0.2)]">
-           <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-lg shadow-blue-600/30">
-             650+
-           </div>
-           <div>
-             <h4 className="font-bold text-slate-900 text-lg mb-1 font-serif">Our Equipment</h4>
-             <p className="text-slate-500 text-sm leading-relaxed">Vestibulum morbi blandit cursus risus. Augue neque gravida.</p>
-           </div>
-         </div>
+            <ul className="mb-8 space-y-3">
+              {['Best Clinic for Safe Procedure', 'Advanced Non-Touch Bio FUE', 'Life-Long Natural Results', 'International Standards'].map((item) => (
+                <li key={item} className="flex items-center gap-3" style={{ color: '#444', fontSize: 15, fontWeight: 500 }}>
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#2458B3] flex items-center justify-center">
+                    <CheckIcon className="w-3 h-3 text-white" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <Link href="/about" className="themeht-btn dark-btn">
+              About Us
+            </Link>
+          </div>
+
+          {/* ─── Col 2: Portrait Image ─── */}
+          <div className="flex justify-center">
+            <div
+              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
+              style={{ width: 320, height: 480, background: '#e8e4dc' }}
+            >
+              <Image
+                src="/images/patient_markings.png"
+                alt="Hair Transplant Specialist"
+                fill
+                className="object-cover"
+                sizes="320px"
+              />
+              {/* Accent blob */}
+              <div
+                className="absolute -bottom-4 -right-4 w-28 h-28 rounded-full"
+                style={{ background: '#2458B3', opacity: 0.15 }}
+              />
+            </div>
+          </div>
+
+          {/* ─── Col 3: Stats ─── */}
+          <div className="space-y-6">
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                className="p-8 border border-[#e8e4dc] rounded-2xl group hover:border-[#2458B3] hover:shadow-lg transition-all duration-300"
+                style={{ background: '#F9F8F6' }}
+              >
+                {/* Big number */}
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: 'var(--font-chivo), Chivo, serif',
+                    fontSize: 52,
+                    fontWeight: 500,
+                    color: '#2458B3',
+                    lineHeight: 1,
+                  }}
+                >
+                  <CountUp
+                    end={s.end}
+                    suffix={s.suffix}
+                    duration={2.5}
+                    enableScrollSpy={true}
+                    scrollSpyOnce={true}
+                  />
+                </div>
+                <h5
+                  style={{
+                    fontFamily: 'var(--font-chivo), Chivo, serif',
+                    fontSize: 20,
+                    fontWeight: 500,
+                    color: '#222',
+                    marginBottom: 8,
+                  }}
+                >
+                  {s.title}
+                </h5>
+                <p style={{ fontSize: 14, color: '#777', lineHeight: '22px', margin: 0 }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
+  );
+}
+
+function CheckIcon({ className = '' }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
   );
 }

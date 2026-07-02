@@ -1,69 +1,121 @@
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, Compass, ShieldCheck } from 'lucide-react';
 import PageShell from '@/components/PageShell';
 
 const results = [
   {
-    title: 'Tailored treatment journeys',
-    text: 'Each case is approached individually so the plan reflects your hair pattern, recovery needs, and goals.',
-    icon: Compass,
+    cat: 'HEALTHIER HAIR',
+    title: 'Afro Hair Transplantation',
+    image: '/images/case_study_1.png',
+    href: '/results/afro-hair-transplantation',
   },
   {
-    title: 'Natural-looking outcomes',
-    text: 'The focus is on healthy-looking density and an overall result that feels balanced and comfortable.',
-    icon: BadgeCheck,
+    cat: 'DHT',
+    title: 'PRP Treatment For Hair',
+    image: '/images/case_study_2.png',
+    href: '/results/prp-treatment-for-hair',
   },
   {
-    title: 'Trusted guidance throughout',
-    text: 'Support continues beyond the procedure with clear aftercare and practical advice that helps protect results.',
-    icon: ShieldCheck,
+    cat: 'CLINICAL RESEARCH',
+    title: 'Follicular Unit Extraction',
+    image: '/images/case_study_3.png',
+    href: '/results/follicular-unit-extraction',
   },
+  {
+    cat: 'HAIR CARE',
+    title: 'Failed Hair Transplant Repair',
+    image: '/images/solutions_1.png',
+    href: '/results/failed-hair-transplant-repair',
+  },
+  {
+    cat: 'HAIR LOSS',
+    title: 'Direct Hair Transplant',
+    image: '/images/solutions_2.png',
+    href: '/results/direct-hair-transplant',
+  },
+  {
+    cat: 'TRANSPLANT',
+    title: 'Body Hair Transplant',
+    image: '/images/diagnosis_4.png',
+    href: '/results/body-hair-transplant',
+  }
 ];
 
 export default function ResultsPage() {
   return (
     <PageShell
-      title="Results That Feel Confident"
-      description="Our approach is shaped around clarity, care, and realistic goals that help you feel informed at every stage."
+      title="Latest Projects"
+      subtitle="Discover our successful hair restoration procedures and clinical outcomes."
+      breadcrumbs={[{ label: 'Projects' }]}
     >
-      <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-8 text-white shadow-sm">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-200">Patient-first outcomes</p>
-            <h2 className="text-2xl font-bold font-serif text-white sm:text-3xl">A calm, considered path to feeling more like yourself again</h2>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-sm text-slate-200 backdrop-blur">
-            Personal care, realistic expectations, and support that continues beyond the first appointment.
-          </div>
-        </div>
-      </div>
+      <section className="py-24" style={{ background: '#eff4f8' }}>
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {results.map((item, i) => (
+              <div
+                key={i}
+                className="group relative rounded-[24px] overflow-hidden bg-gray-100"
+                style={{ aspectRatio: '1/1' }}
+              >
+                {/* Background Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Blue Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2458B3] via-[#2458B3]/50 to-transparent opacity-90 pointer-events-none" />
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-3">
-        {results.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div key={item.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-                <Icon size={20} />
+                {/* Content */}
+                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col pointer-events-none pr-24">
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-sans)',
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: '0.15em',
+                      textTransform: 'uppercase',
+                      color: '#ffffff',
+                      marginBottom: 8,
+                    }}
+                  >
+                    {item.cat}
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-chivo), Chivo, serif',
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: '#ffffff',
+                      lineHeight: '1.3',
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* Bottom Right Corner Cutout & Button */}
+                <div className="absolute bottom-0 right-0 z-10 w-[80px] h-[80px]">
+                  {/* The cutout background matching the section background */}
+                  <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full pointer-events-none">
+                    <path d="M100,0 V100 H0 C0,44.77 44.77,0 100,0 Z" fill="#eff4f8" />
+                  </svg>
+                  
+                  {/* The white circular button */}
+                  <Link
+                    href={item.href}
+                    className="absolute bottom-3 right-3 w-[52px] h-[52px] rounded-full bg-white flex items-center justify-center text-[#222] transition-transform duration-300 hover:scale-110 shadow-sm"
+                  >
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-              <h3 className="mb-3 text-xl font-bold font-serif text-slate-900">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-slate-600">{item.text}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <p className="max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            If you would like to discuss your goals or review what treatment may be suitable, our team is happy to help.
-          </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-blue-700">
-            Start your consultation
-            <ArrowRight size={16} />
-          </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </PageShell>
   );
 }
