@@ -92,7 +92,7 @@ export default function WelcomeSection() {
                 key={i}
                 className="flex items-center gap-5 border-b border-[#D8DEE8] pb-7 last:border-b-0 last:pb-0"
               >
-                <div className="flex h-27 w-27 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_56%,transparent_57%)]">
+                <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
                   <div className="font-sans text-xl leading-none font-bold text-white">
                     <CountUp
                       end={s.end}
