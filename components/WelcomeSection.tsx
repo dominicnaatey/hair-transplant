@@ -34,7 +34,8 @@ export default function WelcomeSection() {
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.02fr_0.9fr_1fr] lg:gap-10 xl:gap-16">
           <div className="max-w-107">
             <div className="theme-title mb-6">
-              <h6 className="mb-[18px] inline-flex items-center rounded-full bg-white px-3 py-1.5 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-[#2458B3] shadow-[0_8px_24px_rgba(36,88,179,0.08)]">
+
+              <h6 className="mb-4 inline-flex w-fit items-center rounded-full bg-[#EEF1F5] px-5 py-1.5 font-sans text-xs font-bold uppercase tracking-[1px] text-[#2458B3]">
                 Better For You
               </h6>
               <SplitText
