@@ -5,21 +5,53 @@ import SplitText from './SplitText';
 import CountUp from 'react-countup';
 
 const stats = [
-  { end: 100, suffix: '%', title: 'Report Efficiency', desc: 'Consistent, reliable results measured across every single procedure.' },
-  { end: 200, suffix: 'k', title: 'Complete Cases', desc: 'Over two hundred thousand patients have regained confidence.' },
-  { end: 650, suffix: '+', title: 'Our Equipment', desc: 'State-of-the-art medical tools across all our specialist clinics.' },
+  {
+    end: 100,
+    suffix: '%',
+    title: 'Report Efficiency',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
+  {
+    end: 200,
+    suffix: 'k',
+    title: 'Complete Cases',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
+  {
+    end: 650,
+    suffix: '+',
+    title: 'Our Equipment',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
 ];
 
 export default function WelcomeSection() {
   return (
-    <section className="w-full py-28" style={{ background: '#FFFFFF' }}>
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-
-          {/* ─── Col 1: Text ─── */}
-          <div>
+    <section
+      className="w-full py-20 md:py-24 lg:py-28"
+      style={{ background: '#EEF1F5' }}
+    >
+      <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.02fr_0.9fr_1fr] lg:gap-10 xl:gap-16">
+          <div className="max-w-[430px]">
             <div className="theme-title mb-6">
-              <h6 style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2458B3', marginBottom: 14 }}>
+              <h6
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '6px 12px',
+                  borderRadius: 999,
+                  background: '#FFFFFF',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: '#2458B3',
+                  marginBottom: 18,
+                  boxShadow: '0 8px 24px rgba(36, 88, 179, 0.08)',
+                }}
+              >
                 Better For You
               </h6>
               <SplitText
@@ -30,15 +62,26 @@ export default function WelcomeSection() {
               />
             </div>
 
-            <p className="mb-6" style={{ color: '#666', fontSize: 17, lineHeight: '27px' }}>
-              As Ghana's premier hair restoration clinic, we are dedicated to helping you regain your confidence. We combine precision science with compassionate care to deliver natural, life-long results.
+            <p
+              className="mb-8 max-w-[360px]"
+              style={{ color: '#667085', fontSize: 16, lineHeight: '28px' }}
+            >
+              Vestibulum morbi blandit cursus risus. Augue neque gravida
+              gravida in fermentum et sollicitudin.
             </p>
 
-            <ul className="mb-8 space-y-3">
-              {['Best Clinic for Safe Procedure', 'Advanced Non-Touch Bio FUE', 'Life-Long Natural Results', 'International Standards'].map((item) => (
-                <li key={item} className="flex items-center gap-3" style={{ color: '#444', fontSize: 15, fontWeight: 500 }}>
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#2458B3] flex items-center justify-center">
-                    <CheckIcon className="w-3 h-3 text-white" />
+            <ul className="mb-10 space-y-4">
+              {[
+                'Best Clinic for safe Procedure',
+                'Advanced Non-touch Bio FUE',
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3"
+                  style={{ color: '#667085', fontSize: 15, fontWeight: 500 }}
+                >
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-[#2458B3]/20 bg-white">
+                    <CheckIcon className="h-3.5 w-3.5 text-[#2458B3]" />
                   </span>
                   {item}
                 </li>
@@ -50,70 +93,78 @@ export default function WelcomeSection() {
             </Link>
           </div>
 
-          {/* ─── Col 2: Portrait Image ─── */}
-          <div className="flex justify-center">
-            <div
-              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
-              style={{ width: 320, height: 480, background: '#e8e4dc' }}
-            >
+          <div className="flex justify-center lg:justify-center">
+            <div className="relative w-full max-w-[310px] lg:max-w-[360px] xl:max-w-[390px]">
               <Image
-                src="/images/patient_markings.png"
-                alt="Hair Transplant Specialist"
-                fill
-                className="object-cover"
-                sizes="320px"
-              />
-              {/* Accent blob */}
-              <div
-                className="absolute -bottom-4 -right-4 w-28 h-28 rounded-full"
-                style={{ background: '#2458B3', opacity: 0.15 }}
+                src="/images/home2-about-img.png"
+                alt="Hair follicle skin anatomy illustration"
+                width={309}
+                height={495}
+                className="h-auto w-full object-contain drop-shadow-[0_24px_40px_rgba(36,88,179,0.08)]"
+                priority
               />
             </div>
           </div>
 
-          {/* ─── Col 3: Stats ─── */}
-          <div className="space-y-6">
+          <div className="space-y-7">
             {stats.map((s, i) => (
               <div
                 key={i}
-                className="p-8 border border-[#e8e4dc] rounded-2xl group hover:border-[#2458B3] hover:shadow-lg transition-all duration-300"
-                style={{ background: '#F9F8F6' }}
+                className="flex items-center gap-5 border-b border-[#D8DEE8] pb-7 last:border-b-0 last:pb-0"
               >
-                {/* Big number */}
                 <div
-                  className="mb-3"
+                  className="flex h-[92px] w-[92px] flex-shrink-0 items-center justify-center rounded-full border border-white bg-transparent shadow-[inset_0_0_0_1px_rgba(255,255,255,0.35)]"
                   style={{
-                    fontFamily: 'var(--font-chivo), Chivo, serif',
-                    fontSize: 52,
-                    fontWeight: 500,
-                    color: '#2458B3',
-                    lineHeight: 1,
+                    background:
+                      'radial-gradient(circle at center, #2458B3 0 56%, transparent 57%)',
                   }}
                 >
-                  <CountUp
-                    end={s.end}
-                    suffix={s.suffix}
-                    duration={2.5}
-                    enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                  />
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-dm-sans), DM Sans, Arial, sans-serif',
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: '#FFFFFF',
+                      lineHeight: 1,
+                    }}
+                  >
+                    <CountUp
+                      end={s.end}
+                      suffix={s.suffix}
+                      duration={2.5}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                  </div>
                 </div>
-                <h5
-                  style={{
-                    fontFamily: 'var(--font-chivo), Chivo, serif',
-                    fontSize: 20,
-                    fontWeight: 500,
-                    color: '#222',
-                    marginBottom: 8,
-                  }}
-                >
-                  {s.title}
-                </h5>
-                <p style={{ fontSize: 14, color: '#777', lineHeight: '22px', margin: 0 }}>{s.desc}</p>
+
+                <div className="max-w-[290px]">
+                  <h5
+                    style={{
+                      fontFamily: 'var(--font-chivo), Chivo, serif',
+                      fontSize: 33,
+                      fontWeight: 500,
+                      color: '#222222',
+                      lineHeight: 1.2,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {s.title}
+                  </h5>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      color: '#667085',
+                      lineHeight: '26px',
+                      margin: 0,
+                    }}
+                  >
+                    {s.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
