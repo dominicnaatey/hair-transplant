@@ -119,15 +119,7 @@ export default function WelcomeSection() {
                       'radial-gradient(circle at center, #2458B3 0 56%, transparent 57%)',
                   }}
                 >
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-dm-sans), DM Sans, Arial, sans-serif',
-                      fontSize: 24,
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      lineHeight: 1,
-                    }}
-                  >
+                  <div className="font-sans text-xl leading-none font-bold text-white">
                     <CountUp
                       end={s.end}
                       suffix={s.suffix}
