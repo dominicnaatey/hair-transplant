@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import PageShell from '@/components/PageShell';
 
 const results = [
@@ -57,7 +58,7 @@ export default function ResultsPage() {
                 style={{ aspectRatio: '1/1' }}
               >
                 {/* Background Image */}
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
