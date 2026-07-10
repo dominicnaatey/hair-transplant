@@ -92,7 +92,7 @@ export default function WelcomeSection() {
                 key={i}
                 className="flex items-center gap-5 border-b border-[#D8DEE8] pb-7 last:border-b-0 last:pb-0"
               >
-                <div className="flex h-27 w-27 shrink-0 items-center justify-center rounded-full border border-white bg-[radial-gradient(circle_at_center,_#2458B3_0_56%,_transparent_57%)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.35)]">
+                <div className="flex h-27 w-27 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_56%,transparent_57%)]">
                   <div className="font-sans text-xl leading-none font-bold text-white">
                     <CountUp
                       end={s.end}
@@ -105,10 +105,10 @@ export default function WelcomeSection() {
                 </div>
 
                 <div className="max-w-72.5">
-                  <h5 className="mb-3 font-heading text-[33px] leading-[1.2] font-medium text-[#222222]">
+                  <h5 className="mb-3 font-heading text-[22px] leading-[1.2] font-medium text-black">
                     {s.title}
                   </h5>
-                  <p className="m-0 text-[15px] leading-[26px] text-[#667085]">
+                  <p className="m-0 text-base leading-6.5 text-gray-800">
                     {s.desc}
                   </p>
                 </div>
@@ -118,13 +118,5 @@ export default function WelcomeSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function CheckIcon({ className = '' }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
   );
 }
