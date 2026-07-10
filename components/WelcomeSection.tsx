@@ -63,7 +63,7 @@ export default function WelcomeSection() {
             </div>
 
             <p
-              className="mb-8 max-w-[360px]"
+              className="mb-8 max-w-90"
               style={{ color: '#667085', fontSize: 16, lineHeight: '28px' }}
             >
               Vestibulum morbi blandit cursus risus. Augue neque gravida
@@ -80,7 +80,7 @@ export default function WelcomeSection() {
                   className="flex items-center gap-3"
                   style={{ color: '#667085', fontSize: 15, fontWeight: 500 }}
                 >
-                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-[#2458B3]/20 bg-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#2458B3]/20 bg-white">
                     <CheckIcon className="h-3.5 w-3.5 text-[#2458B3]" />
                   </span>
                   {item}
@@ -94,13 +94,13 @@ export default function WelcomeSection() {
           </div>
 
           <div className="flex justify-center lg:justify-center">
-            <div className="relative w-full max-w-[310px] lg:max-w-[360px] xl:max-w-[390px]">
+            <div className="relative w-full max-w-77 md:max-w-77.25">
               <Image
                 src="/images/home2-about-img.png"
                 alt="Hair follicle skin anatomy illustration"
                 width={309}
-                height={495}
-                className="h-auto w-full object-contain drop-shadow-[0_24px_40px_rgba(36,88,179,0.08)]"
+                height={480}
+                className="h-auto w-full object-contain"
                 priority
               />
             </div>
@@ -113,7 +113,7 @@ export default function WelcomeSection() {
                 className="flex items-center gap-5 border-b border-[#D8DEE8] pb-7 last:border-b-0 last:pb-0"
               >
                 <div
-                  className="flex h-[92px] w-[92px] flex-shrink-0 items-center justify-center rounded-full border border-white bg-transparent shadow-[inset_0_0_0_1px_rgba(255,255,255,0.35)]"
+                  className="flex h-27 w-27 shrink-0 items-center justify-center rounded-full border border-white bg-transparent shadow-[inset_0_0_0_1px_rgba(255,255,255,0.35)]"
                   style={{
                     background:
                       'radial-gradient(circle at center, #2458B3 0 56%, transparent 57%)',
@@ -138,7 +138,7 @@ export default function WelcomeSection() {
                   </div>
                 </div>
 
-                <div className="max-w-[290px]">
+                <div className="max-w-72.5">
                   <h5
                     style={{
                       fontFamily: 'var(--font-chivo), Chivo, serif',
