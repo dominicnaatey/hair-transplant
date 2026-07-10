@@ -31,9 +31,9 @@ export default function WelcomeSection() {
       className="w-full py-20 md:py-24 lg:py-28"
       style={{ background: '#EEF1F5' }}
     >
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-0">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.02fr_0.9fr_1fr] lg:gap-10 xl:gap-16">
-          <div className="max-w-[430px]">
+          <div className="max-w-107">
             <div className="theme-title mb-6">
               <h6
                 style={{
