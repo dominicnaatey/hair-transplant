@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SplitText from './SplitText';
 import CountUp from 'react-countup';
+import { CircleCheckBig } from 'lucide-react';
 
 const stats = [
   {
@@ -80,8 +81,8 @@ export default function WelcomeSection() {
                   className="flex items-center gap-3"
                   style={{ color: '#667085', fontSize: 15, fontWeight: 500 }}
                 >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#2458B3]/20 bg-white">
-                    <CheckIcon className="h-3.5 w-3.5 text-[#2458B3]" />
+                  <span className="flex shrink-0 items-center justify-center ">
+                    <CircleCheckBig className="h-5 w-5 text-[#2458B3]" />
                   </span>
                   {item}
                 </li>
