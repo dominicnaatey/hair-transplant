@@ -55,8 +55,8 @@ export default function Hero() {
             style={{ backgroundImage: `url(${slide.bg})` }}
           />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/80 via-[#0f172a]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0f172a]/80 via-[#0f172a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#0f172a]/60 via-transparent to-transparent" />
         </div>
       ))}
 
@@ -161,9 +161,9 @@ export default function Hero() {
         style={{ width: 160, height: 80 }}
       >
         {/* Left SVG notch */}
-        <svg viewBox="0 0 100 100" className="h-full" style={{ width: 40 }}>
+        {/* <svg viewBox="0 0 100 100" className="h-full" style={{ width: 40 }}>
           <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#F9F8F6" />
-        </svg>
+        </svg> */}
 
         {/* Prev button */}
         <button
