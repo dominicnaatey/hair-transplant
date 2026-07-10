@@ -35,7 +35,7 @@ export default function WelcomeSection() {
           <div className="max-w-107">
             <div className="theme-title mb-6">
 
-              <h6 className="mb-4 inline-flex w-fit items-center rounded-full bg-[#EEF1F5] px-5 py-1.5 font-sans text-xs font-bold uppercase tracking-[1px] text-[#2458B3]">
+              <h6 className="mb-4 inline-flex w-fit items-center rounded-full border border-[#e1e9f3] bg-[#EEF1F5]/50 px-5 py-1.5 font-sans text-xs font-bold uppercase tracking-[1px] text-[#2458B3]">
                 Better For You
               </h6>
               <SplitText
