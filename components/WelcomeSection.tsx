@@ -90,7 +90,7 @@ export default function WelcomeSection() {
             {stats.map((s, i) => (
               <div
                 key={i}
-                className="flex items-center gap-5 border-b border-[#D8DEE8] pb-7 last:border-b-0 last:pb-0"
+                className="flex items-center gap-5"
               >
                 <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
                   <div className="font-sans text-xl leading-none font-bold text-white">
@@ -108,6 +108,7 @@ export default function WelcomeSection() {
                   <h5 className="mb-3 font-heading text-[22px] leading-[1.2] font-medium text-black">
                     {s.title}
                   </h5>
+                  <div className="mb-3 h-px w-full bg-[#D8DEE8]" />
                   <p className="m-0 text-base leading-6.5 text-gray-800">
                     {s.desc}
                   </p>
