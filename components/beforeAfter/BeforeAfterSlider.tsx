@@ -28,25 +28,28 @@ export default function BeforeAfterSlider({
     setSliderPosition(percent);
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    handleMove(e.clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    handleMove(e.touches[0].clientX);
-  };
-
   useEffect(() => {
     const handleMouseUp = () => setIsDragging(false);
+    
+    const handleMouseMoveWindow = (e: MouseEvent) => {
+      if (isDragging) handleMove(e.clientX);
+    };
+    
+    const handleTouchMoveWindow = (e: TouchEvent) => {
+      if (isDragging) handleMove(e.touches[0].clientX);
+    };
+
     if (isDragging) {
       window.addEventListener('mouseup', handleMouseUp);
       window.addEventListener('touchend', handleMouseUp);
+      window.addEventListener('mousemove', handleMouseMoveWindow);
+      window.addEventListener('touchmove', handleTouchMoveWindow, { passive: false });
     }
     return () => {
       window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('touchend', handleMouseUp);
+      window.removeEventListener('mousemove', handleMouseMoveWindow);
+      window.removeEventListener('touchmove', handleTouchMoveWindow);
     };
   }, [isDragging]);
 
@@ -55,8 +58,6 @@ export default function BeforeAfterSlider({
       ref={containerRef}
       className="relative w-full overflow-hidden rounded-[24px] cursor-ew-resize select-none"
       style={{ aspectRatio: '4/3' }}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
       onMouseDown={(e) => {
         setIsDragging(true);
         handleMove(e.clientX);
@@ -71,14 +72,15 @@ export default function BeforeAfterSlider({
         src={afterImage}
         alt="After"
         fill
-        className="object-cover"
+        className="object-cover pointer-events-none"
         sizes="(min-width: 1024px) 50vw, 100vw"
         priority
+        draggable={false}
       />
       
       {/* Before Image (Foreground with clip-path) */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
       >
         <Image
@@ -88,6 +90,7 @@ export default function BeforeAfterSlider({
           className="object-cover"
           sizes="(min-width: 1024px) 50vw, 100vw"
           priority
+          draggable={false}
         />
       </div>
 
