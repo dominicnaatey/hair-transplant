@@ -11,7 +11,11 @@ export default function Gallery() {
             key={c.id}
             direction="up"
             distance={40}
-            className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_400px] lg:gap-16"
+            className={`grid grid-cols-1 items-center gap-10 lg:gap-16 ${
+              index % 2 !== 0
+                ? "lg:grid-cols-[45%_55%]"
+                : "lg:grid-cols-[55%_45%]"
+            }`}
           >
             <div className={index % 2 !== 0 ? "lg:order-2" : ""}>
               <div className="rounded-4xl bg-white p-2 shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
