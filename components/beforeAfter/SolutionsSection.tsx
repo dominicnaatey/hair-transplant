@@ -84,7 +84,7 @@ export default function SolutionsSection() {
 
   return (
     <section className="w-full py-24" style={{ background: '#FFFFFF' }}>
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section heading */}
         <div className="mb-16">
           <span
@@ -137,7 +137,7 @@ export default function SolutionsSection() {
                   transformOrigin: 'top center',
                 }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-[320px]">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-80">
                   {/* Content */}
                   <div className="p-10 lg:p-14 flex flex-col justify-center">
                     <h3
@@ -184,15 +184,7 @@ export default function SolutionsSection() {
                       </div>
                       {/* Col 2 */}
                       <div>
-                        <h5
-                          style={{
-                            fontFamily: 'var(--font-chivo), Chivo, serif',
-                            fontSize: 18,
-                            fontWeight: 500,
-                            color: '#222',
-                            marginBottom: 12,
-                          }}
-                        >
+                        <h5 className="mb-3 font-heading text-lg font-medium text-[#222]">
                           {step.col2Title}
                         </h5>
                         <ul className="space-y-2">
@@ -202,7 +194,7 @@ export default function SolutionsSection() {
                               className="flex items-center gap-2"
                               style={{ fontSize: 14, color: '#666' }}
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] shrink-0" />
                               {item}
                             </li>
                           ))}
@@ -220,7 +212,7 @@ export default function SolutionsSection() {
                       className="object-cover"
                       sizes="320px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-r from-white/20 to-transparent" />
                   </div>
                 </div>
 
