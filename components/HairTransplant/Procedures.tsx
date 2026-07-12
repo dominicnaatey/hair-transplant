@@ -22,8 +22,8 @@ export default function Procedures() {
             >
               <div
                 className={`${
-                  reversed ? "md:pl-8" : "md:pr-8"
-                } text-center md:text-left`}
+                  reversed ? "md:pl-8 md:text-left" : "md:pr-8 md:text-right"
+                } text-center `}
               >
                 <h3 className="text-2xl leading-[1.2] font-light text-blue-900!">
                   {procedure.title}
