@@ -5,24 +5,26 @@ import SplitText from './SplitText';
 import CountUp from 'react-countup';
 import { CircleCheckBig } from 'lucide-react';
 
+import ScrollReveal from './ScrollReveal';
+
 const stats = [
   {
     end: 100,
     suffix: '%',
-    title: 'Report Efficiency',
-    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+    title: 'Natural Looking Results',
+    desc: 'Our advanced follicular extraction ensures your hair grows naturally, blending seamlessly with your existing hairline.',
   },
   {
-    end: 200,
-    suffix: 'k',
-    title: 'Complete Cases',
-    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+    end: 15,
+    suffix: 'k+',
+    title: 'Successful Procedures',
+    desc: 'We have transformed the lives of thousands of patients, restoring their confidence with our proven methodologies.',
   },
   {
-    end: 650,
-    suffix: '+',
-    title: 'Our Equipment',
-    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+    end: 99,
+    suffix: '%',
+    title: 'Patient Satisfaction',
+    desc: 'Our dedicated team provides unparalleled post-operative care, ensuring every patient is thrilled with their outcome.',
   },
 ];
 
@@ -46,9 +48,8 @@ export default function WelcomeSection() {
               />
             </div>
 
-            <p className="mb-8 max-w-90 text-base leading-7 text-[#667085]">
-              Vestibulum morbi blandit cursus risus. Augue neque gravida
-              gravida in fermentum et sollicitudin.
+            <p className="mb-8 max-w-90 text-[17px] leading-[27px] text-[#667085]">
+              At Hairise, we utilize industry-leading techniques to provide permanent, natural-looking hair restoration. Our expert surgeons and state-of-the-art facilities guarantee you receive the highest standard of care on your journey to renewed confidence.
             </p>
 
             <ul className="mb-10 space-y-4">
@@ -88,8 +89,11 @@ export default function WelcomeSection() {
 
           <div className="space-y-7">
             {stats.map((s, i) => (
-              <div
+              <ScrollReveal
                 key={i}
+                direction="up"
+                distance={20}
+                delay={i * 0.15}
                 className="flex items-center gap-5 md:gap-8"
               >
                 <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
@@ -113,7 +117,7 @@ export default function WelcomeSection() {
                     {s.desc}
                   </p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
