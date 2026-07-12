@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Chivo } from "next/font/google";
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import RouteTransition from '@/components/RouteTransition';
 import "./globals.css";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <Header />
         <RouteTransition>{children}</RouteTransition>
+        <Footer />
       </body>
     </html>
   );

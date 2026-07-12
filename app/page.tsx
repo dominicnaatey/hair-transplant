@@ -9,7 +9,6 @@ import CaseStudies from '@/components/CaseStudies';
 import TestimonialSection from '@/components/TestimonialSection';
 import ContactSection from '@/components/ContactSection';
 import BlogSection from '@/components/BlogSection';
-import Footer from '@/components/Footer';
 
 export default function Page() {
   return (
@@ -43,8 +42,6 @@ export default function Page() {
 
       {/* Blog posts */}
       {/* <BlogSection /> */}
-
-      <Footer />
     </main>
   );
 }

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Footer from '@/components/Footer';
 
 type Procedure = {
   title: string;
@@ -49,8 +48,7 @@ const procedures: Procedure[] = [
 
 export default function HairTransplantPage() {
   return (
-    <>
-      <main className="bg-white">
+    <main className="bg-white">
         <section className="relative h-[280px] overflow-hidden sm:h-[340px] md:h-[400px]">
           <Image
             src="/images/patient_markings.png"
@@ -163,8 +161,5 @@ export default function HairTransplantPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </>
   );
 }

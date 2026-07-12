@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -94,8 +93,6 @@ export default function PageShell({ title, subtitle, children, breadcrumbs = [] 
 
       {/* ─── Page Content ─── */}
       <main className="w-full">{children}</main>
-
-      <Footer />
     </>
   );
 }
