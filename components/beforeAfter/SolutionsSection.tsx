@@ -126,7 +126,7 @@ export default function SolutionsSection() {
                 zIndex: i,
               }}
             >
-              <div 
+              <div
                 className="step-inner relative overflow-hidden"
                 style={{
                   borderRadius: 12,
@@ -137,124 +137,124 @@ export default function SolutionsSection() {
                   transformOrigin: 'top center',
                 }}
               >
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-[320px]">
-                {/* Content */}
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-chivo), Chivo, serif',
-                      fontSize: 'clamp(26px, 3vw, 38px)',
-                      fontWeight: 500,
-                      color: '#222',
-                      marginBottom: 16,
-                    }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p style={{ color: '#666', lineHeight: '27px', marginBottom: 28, maxWidth: 560 }}>
-                    {step.body}
-                  </p>
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-[320px]">
+                  {/* Content */}
+                  <div className="p-10 lg:p-14 flex flex-col justify-center">
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-chivo), Chivo, serif',
+                        fontSize: 'clamp(26px, 3vw, 38px)',
+                        fontWeight: 500,
+                        color: '#222',
+                        marginBottom: 16,
+                      }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p style={{ color: '#666', lineHeight: '27px', marginBottom: 28, maxWidth: 560 }}>
+                      {step.body}
+                    </p>
 
-                  <div className="grid grid-cols-2 gap-8">
-                    {/* Col 1 */}
-                    <div>
-                      <h5
-                        style={{
-                          fontFamily: 'var(--font-chivo), Chivo, serif',
-                          fontSize: 18,
-                          fontWeight: 500,
-                          color: '#222',
-                          marginBottom: 12,
-                        }}
-                      >
-                        {step.col1Title}
-                      </h5>
-                      <ul className="space-y-2">
-                        {step.col1Items.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-center gap-2"
-                            style={{ fontSize: 14, color: '#666' }}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid grid-cols-2 gap-8">
+                      {/* Col 1 */}
+                      <div>
+                        <h5
+                          style={{
+                            fontFamily: 'var(--font-chivo), Chivo, serif',
+                            fontSize: 18,
+                            fontWeight: 500,
+                            color: '#222',
+                            marginBottom: 12,
+                          }}
+                        >
+                          {step.col1Title}
+                        </h5>
+                        <ul className="space-y-2">
+                          {step.col1Items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-center gap-2"
+                              style={{ fontSize: 14, color: '#666' }}
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {/* Col 2 */}
+                      <div>
+                        <h5
+                          style={{
+                            fontFamily: 'var(--font-chivo), Chivo, serif',
+                            fontSize: 18,
+                            fontWeight: 500,
+                            color: '#222',
+                            marginBottom: 12,
+                          }}
+                        >
+                          {step.col2Title}
+                        </h5>
+                        <ul className="space-y-2">
+                          {step.col2Items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-center gap-2"
+                              style={{ fontSize: 14, color: '#666' }}
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    {/* Col 2 */}
-                    <div>
-                      <h5
-                        style={{
-                          fontFamily: 'var(--font-chivo), Chivo, serif',
-                          fontSize: 18,
-                          fontWeight: 500,
-                          color: '#222',
-                          marginBottom: 12,
-                        }}
-                      >
-                        {step.col2Title}
-                      </h5>
-                      <ul className="space-y-2">
-                        {step.col2Items.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-center gap-2"
-                            style={{ fontSize: 14, color: '#666' }}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#2458B3] flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  </div>
+
+                  {/* Image */}
+                  <div className="relative hidden lg:block" style={{ minHeight: 320 }}>
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-cover"
+                      sizes="320px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
                   </div>
                 </div>
 
-                {/* Image */}
-                <div className="relative hidden lg:block" style={{ minHeight: 320 }}>
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover"
-                    sizes="320px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
-                </div>
-              </div>
-
-              {/* Corner button-style-2 */}
-              <div className="button-style-2">
-                <svg viewBox="0 0 100 100" style={{ width: 40, height: 40 }}>
-                  <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
-                </svg>
-                <Link href="/contact" className="button-style-2-link" aria-label="Contact us">
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                {/* Corner button-style-2 */}
+                <div className="button-style-2">
+                  <svg viewBox="0 0 100 100" style={{ width: 40, height: 40 }}>
+                    <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
                   </svg>
-                </Link>
-                <svg viewBox="0 0 100 100" style={{ width: 40, height: 40, transform: 'scaleX(-1)' }}>
-                  <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
-                </svg>
-              </div>
+                  <Link href="/contact" className="button-style-2-link" aria-label="Contact us">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </Link>
+                  <svg viewBox="0 0 100 100" style={{ width: 40, height: 40, transform: 'scaleX(-1)' }}>
+                    <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
+                  </svg>
+                </div>
 
-              {/* Step number badge */}
-              <div
-                className="absolute top-10 right-10 lg:right-[340px]"
-                style={{
-                  fontFamily: 'var(--font-chivo), Chivo, serif',
-                  fontSize: 120,
-                  fontWeight: 700,
-                  color: 'rgba(36,88,179,0.04)',
-                  lineHeight: 1,
-                  userSelect: 'none',
-                  pointerEvents: 'none',
-                }}
-              >
-                {String(i + 1).padStart(2, '0')}
-              </div>
-              
+                {/* Step number badge */}
+                <div
+                  className="absolute top-10 right-10 lg:right-[340px]"
+                  style={{
+                    fontFamily: 'var(--font-chivo), Chivo, serif',
+                    fontSize: 120,
+                    fontWeight: 700,
+                    color: 'rgba(36,88,179,0.04)',
+                    lineHeight: 1,
+                    userSelect: 'none',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+
               </div> {/* Close step-inner */}
             </div>
           ))}
