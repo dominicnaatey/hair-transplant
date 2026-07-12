@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import FeaturesRow from '@/components/FeaturesRow';
 import WelcomeSection from '@/components/WelcomeSection';
-import SolutionsSection from '@/components/SolutionsSection';
+import SolutionsSection from '@/components/beforeAfter/SolutionsSection';
 import MarqueeBanner from '@/components/MarqueeBanner';
 import DiagnosisSection from '@/components/DiagnosisSection';
 import CaseStudies from '@/components/CaseStudies';
