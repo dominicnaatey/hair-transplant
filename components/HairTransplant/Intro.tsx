@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <section className="bg-white px-6 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-190 text-center">
-        <h2 className="font-heading text-3xl leading-[1.2] font-medium !text-[#121212] sm:text-[2.125rem]">
+        <h2 className="font-heading text-3xl leading-[1.2] font-medium text-blue-900 sm:text-[2.125rem]">
           Discover The Latest Hair Transplant Solutions
         </h2>
         <div className="mx-auto mt-4 h-px w-28 bg-[#D9D9D9]" />
