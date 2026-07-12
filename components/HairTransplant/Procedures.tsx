@@ -28,7 +28,7 @@ export default function Procedures() {
                 <h3 className="text-2xl leading-[1.2] font-light text-blue-900!">
                   {procedure.title}
                 </h3>
-                <p className="mt-4 text-[0.9375rem] leading-7 text-black">
+                <p className="mt-4 text-balance text-[0.9375rem] leading-7 text-black">
                   {procedure.description}
                 </p>
                 <Link
