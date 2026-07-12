@@ -10,14 +10,14 @@ export const procedures: Procedure[] = [
   {
     title: "FUE Hair Transplant",
     description:
-      "FUE is a minimally invasive treatment that removes individual follicles and places them carefully for natural-looking density and a softer hairline.",
+      "With FUE, individual hair follicles are transferred one at a time, from the back of the scalp, where hair is thickest, to the area where hair has thinned. This procedure starts at approximately GH¢15,500.00.",
     image: "/transplant/fue.jpg",
     imageAlt: "FUE hair transplant procedure in progress",
   },
   {
     title: "FUT Hair Transplant",
     description:
-      "FUT is ideal when larger graft numbers are needed. It allows efficient harvesting while helping restore volume across wider thinning areas.",
+      "Much like FUE, donor hairs are taken from the back of the head and inserted into thinning areas. However, in FUT a “donor strip” is taken rather than individual hairs. This procedure starts at approximately GH¢15,500.00.",
     image: "/transplant/fut.jpg",
     imageAlt: "FUT hair transplant planning and preparation",
     imageClassName: "scale-125 object-center",
@@ -25,14 +25,14 @@ export const procedures: Procedure[] = [
   {
     title: "Eyebrow Transplant",
     description:
-      "Eyebrow restoration is designed for sparse or overplucked brows, using precise placement to rebuild shape, softness, and facial balance.",
+      "Restore fullness and definition to your brows, bidding farewell to sparse patches and uneven shapes. Our skilled team specializes in crafting natural-looking results tailored to suit your unique features. The procedure starts from GH¢14,995-GH¢15,995.",
     image: "/transplant/eyebrow.jpg",
     imageAlt: "Close-up hair restoration result",
   },
   {
     title: "Beard Transplant",
     description:
-      "We restore patchy beard growth with strategic graft placement that improves density while maintaining a realistic beard pattern and direction.",
+      "Say goodbye to patchy or thin facial hair and hello to a full, masculine beard that exudes confidence. Our expert team specializes in creating natural-looking results that enhance your facial features. The procedure starts from GH¢16,500.00.",
     image: "/transplant/beard.jpg",
     imageAlt: "Beard transplant consultation patient portrait",
     imageClassName: "scale-115 object-center",
@@ -40,7 +40,7 @@ export const procedures: Procedure[] = [
   {
     title: "Female Pattern Baldness Treatment",
     description:
-      "Female hair restoration plans focus on careful diagnosis, density preservation, and tailored treatment options that respect existing growth patterns.",
+      "Discover renewed confidence with our hair transplant solutions tailored specifically for female pattern baldness. Bid farewell to thinning hair and embrace a fuller, more voluminous mane that enhances your natural beauty.",
     image: "/transplant/female.jpg",
     imageAlt: "Female patient receiving hair treatment in clinic",
   },
