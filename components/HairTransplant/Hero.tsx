@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-70 overflow-hidden sm:h-85 md:h-100">
+    <section className="relative h-80 overflow-hidden sm:h-96 md:h-[500px]">
       <Image
         src="/images/patient_markings.png"
         alt="Hair transplant procedure"
@@ -11,11 +14,24 @@ export default function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.2)_0%,rgba(15,23,42,0.56)_100%)]" />
-      <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-        <h1 className="font-heading text-3xl font-medium tracking-[1.2] !text-white md:text-5xl">
-          Hair Transplant
-        </h1>
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center pt-16">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="font-heading text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6"
+        >
+          Hair Transplant Solutions
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-white/90 text-lg md:text-xl max-w-2xl font-light"
+        >
+          State-of-the-art procedures tailored to your unique hair restoration goals, ensuring natural and permanent results.
+        </motion.p>
       </div>
     </section>
   );
