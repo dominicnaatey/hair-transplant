@@ -46,11 +46,15 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6,
-.font-heading {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-chivo), 'Chivo', Georgia, serif;
   font-weight: 500;
   color: var(--dark);
+}
+
+.font-heading {
+  font-family: var(--font-chivo), 'Chivo', Georgia, serif;
+  font-weight: 500;
 }
 
 * { box-sizing: border-box; }

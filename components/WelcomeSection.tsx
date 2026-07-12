@@ -3,23 +3,39 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SplitText from './SplitText';
 import CountUp from 'react-countup';
+import { CircleCheckBig } from 'lucide-react';
 
 const stats = [
-  { end: 100, suffix: '%', title: 'Report Efficiency', desc: 'Consistent, reliable results measured across every single procedure.' },
-  { end: 200, suffix: 'k', title: 'Complete Cases', desc: 'Over two hundred thousand patients have regained confidence.' },
-  { end: 650, suffix: '+', title: 'Our Equipment', desc: 'State-of-the-art medical tools across all our specialist clinics.' },
+  {
+    end: 100,
+    suffix: '%',
+    title: 'Report Efficiency',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
+  {
+    end: 200,
+    suffix: 'k',
+    title: 'Complete Cases',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
+  {
+    end: 650,
+    suffix: '+',
+    title: 'Our Equipment',
+    desc: 'Vestibulum morbi blandit cursus risus. Augue neque gravida.',
+  },
 ];
 
 export default function WelcomeSection() {
   return (
-    <section className="w-full py-28" style={{ background: '#FFFFFF' }}>
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-
-          {/* ─── Col 1: Text ─── */}
-          <div>
+    <section
+      className="w-full py-20 md:py-24 lg:py-28 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-0">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.02fr_0.9fr_1fr] lg:gap-10 xl:gap-16">
+          <div className="max-w-107">
             <div className="theme-title mb-6">
-              <h6 style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2458B3', marginBottom: 14 }}>
+
+              <h6 className="mb-4 inline-flex w-fit items-center rounded-full border border-[#e1e9f3] bg-[#EEF1F5]/50 px-5 py-1.5 font-sans text-xs font-bold uppercase tracking-[1px] text-[#2458B3]">
                 Better For You
               </h6>
               <SplitText
@@ -30,15 +46,22 @@ export default function WelcomeSection() {
               />
             </div>
 
-            <p className="mb-6" style={{ color: '#666', fontSize: 17, lineHeight: '27px' }}>
-              As Ghana's premier hair restoration clinic, we are dedicated to helping you regain your confidence. We combine precision science with compassionate care to deliver natural, life-long results.
+            <p className="mb-8 max-w-90 text-base leading-7 text-[#667085]">
+              Vestibulum morbi blandit cursus risus. Augue neque gravida
+              gravida in fermentum et sollicitudin.
             </p>
 
-            <ul className="mb-8 space-y-3">
-              {['Best Clinic for Safe Procedure', 'Advanced Non-Touch Bio FUE', 'Life-Long Natural Results', 'International Standards'].map((item) => (
-                <li key={item} className="flex items-center gap-3" style={{ color: '#444', fontSize: 15, fontWeight: 500 }}>
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#2458B3] flex items-center justify-center">
-                    <CheckIcon className="w-3 h-3 text-white" />
+            <ul className="mb-10 space-y-4">
+              {[
+                'Best Clinic for safe Procedure',
+                'Advanced Non-touch Bio FUE',
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-[15px] font-medium text-[#667085]"
+                >
+                  <span className="flex shrink-0 items-center justify-center ">
+                    <CircleCheckBig className="h-5 w-5 text-[#2458B3]" />
                   </span>
                   {item}
                 </li>
@@ -50,80 +73,51 @@ export default function WelcomeSection() {
             </Link>
           </div>
 
-          {/* ─── Col 2: Portrait Image ─── */}
-          <div className="flex justify-center">
-            <div
-              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
-              style={{ width: 320, height: 480, background: '#e8e4dc' }}
-            >
+          <div className="flex justify-center lg:justify-center">
+            <div className="relative w-full max-w-77 md:max-w-77.25">
               <Image
-                src="/images/patient_markings.png"
-                alt="Hair Transplant Specialist"
-                fill
-                className="object-cover"
-                sizes="320px"
-              />
-              {/* Accent blob */}
-              <div
-                className="absolute -bottom-4 -right-4 w-28 h-28 rounded-full"
-                style={{ background: '#2458B3', opacity: 0.15 }}
+                src="/images/home2-about-img.png"
+                alt="Hair follicle skin anatomy illustration"
+                width={309}
+                height={480}
+                className="h-auto w-full object-contain"
+                priority
               />
             </div>
           </div>
 
-          {/* ─── Col 3: Stats ─── */}
-          <div className="space-y-6">
+          <div className="space-y-7">
             {stats.map((s, i) => (
               <div
                 key={i}
-                className="p-8 border border-[#e8e4dc] rounded-2xl group hover:border-[#2458B3] hover:shadow-lg transition-all duration-300"
-                style={{ background: '#F9F8F6' }}
+                className="flex items-center gap-5 md:gap-8"
               >
-                {/* Big number */}
-                <div
-                  className="mb-3"
-                  style={{
-                    fontFamily: 'var(--font-chivo), Chivo, serif',
-                    fontSize: 52,
-                    fontWeight: 500,
-                    color: '#2458B3',
-                    lineHeight: 1,
-                  }}
-                >
-                  <CountUp
-                    end={s.end}
-                    suffix={s.suffix}
-                    duration={2.5}
-                    enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                  />
+                <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
+                  <div className="font-sans text-xl leading-none font-bold text-white">
+                    <CountUp
+                      end={s.end}
+                      suffix={s.suffix}
+                      duration={2.5}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                  </div>
                 </div>
-                <h5
-                  style={{
-                    fontFamily: 'var(--font-chivo), Chivo, serif',
-                    fontSize: 20,
-                    fontWeight: 500,
-                    color: '#222',
-                    marginBottom: 8,
-                  }}
-                >
-                  {s.title}
-                </h5>
-                <p style={{ fontSize: 14, color: '#777', lineHeight: '22px', margin: 0 }}>{s.desc}</p>
+
+                <div className="max-w-72.5">
+                  <h5 className="mb-3 font-heading text-[22px] leading-[1.2] font-medium text-black">
+                    {s.title}
+                  </h5>
+                  <div className="mb-3 h-px w-full bg-[#D8DEE8]" />
+                  <p className="m-0 text-base leading-6.5 text-gray-800">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
-  );
-}
-
-function CheckIcon({ className = '' }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
   );
 }

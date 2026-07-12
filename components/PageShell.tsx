@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -13,8 +11,6 @@ interface PageShellProps {
 export default function PageShell({ title, subtitle, children, breadcrumbs = [] }: PageShellProps) {
   return (
     <>
-      <Header />
-
       {/* ─── Page Banner ─── */}
       <section className="page-banner">
         <div className="page-banner-overlay" />
@@ -97,8 +93,6 @@ export default function PageShell({ title, subtitle, children, breadcrumbs = [] 
 
       {/* ─── Page Content ─── */}
       <main className="w-full">{children}</main>
-
-      <Footer />
     </>
   );
 }

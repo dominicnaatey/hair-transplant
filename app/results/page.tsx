@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import PageShell from '@/components/PageShell';
 
 const results = [
@@ -57,10 +58,12 @@ export default function ResultsPage() {
                 style={{ aspectRatio: '1/1' }}
               >
                 {/* Background Image */}
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Blue Gradient Overlay */}
