@@ -43,13 +43,13 @@ export default function ResultsPage() {
       breadcrumbs={[{ label: 'Before & After' }]}
     >
       <section className="py-20 lg:py-32 bg-[#F9F8F6]">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12 space-y-24 lg:space-y-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-24 lg:space-y-32">
           {cases.map((c, index) => (
             <ScrollReveal key={c.id} direction="up" distance={40} className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-center">
               
               {/* Slider Side */}
               <div className={index % 2 !== 0 ? 'lg:order-2' : ''}>
-                <div className="p-2 bg-white rounded-[32px] shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
+                <div className="p-2 bg-white rounded-4xl shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
                   <BeforeAfterSlider 
                     beforeImage={c.beforeImage} 
                     afterImage={c.afterImage} 
@@ -67,7 +67,7 @@ export default function ResultsPage() {
                   {c.title}
                 </h3>
                 
-                <p className="text-[#666] text-[17px] leading-[27px] mb-10">
+                <p className="text-[#666] text-[17px] text-balance leading-6.75 mb-10">
                   {c.description}
                 </p>
 
