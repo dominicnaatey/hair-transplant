@@ -5,14 +5,16 @@ import { procedures } from "@/components/HairTransplant/data";
 export default function Procedures() {
   return (
     <section className="bg-white px-6 pb-16 sm:pb-20 md:pb-24">
-      <div className="mx-auto max-w-245 space-y-16 sm:space-y-20 md:space-y-24">
+      <div className="mx-auto max-w-245 space-y-16 sm:space-y-20 md:space-y-36">
         {procedures.map((procedure, index) => {
           const reversed = index % 2 === 1;
 
           return (
             <section
               key={procedure.title}
-              className={`grid items-center gap-8 md:grid-cols-[45%_55%] md:gap-12 ${
+              className={`grid items-center gap-8 md:gap-12 ${
+                reversed ? "md:grid-cols-[55%_45%]" : "md:grid-cols-[45%_55%]"
+              } ${
                 reversed
                   ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1"
                   : ""
@@ -44,7 +46,7 @@ export default function Procedures() {
                     alt={procedure.imageAlt}
                     fill
                     sizes="(min-width: 768px) 430px, 100vw"
-                    className="object-cover"
+                    className={`object-cover ${procedure.imageClassName ?? ""}`}
                   />
                 </div>
               </div>
