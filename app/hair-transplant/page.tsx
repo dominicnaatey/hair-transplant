@@ -1,15 +1,15 @@
-import HairTransplantCta from "@/components/HairTransplant/HairTransplantCta";
-import HairTransplantHero from "@/components/HairTransplant/HairTransplantHero";
-import HairTransplantIntro from "@/components/HairTransplant/HairTransplantIntro";
-import HairTransplantProcedures from "@/components/HairTransplant/HairTransplantProcedures";
+import Cta from "@/components/HairTransplant/Cta";
+import Hero from "@/components/HairTransplant/Hero";
+import Intro from "@/components/HairTransplant/Intro";
+import Procedures from "@/components/HairTransplant/Procedures";
 
 export default function ServicesPage() {
   return (
     <main className="bg-white">
-      <HairTransplantHero />
-      <HairTransplantIntro />
-      <HairTransplantProcedures />
-      <HairTransplantCta />
+      <Hero />
+      <Intro />
+      <Procedures />
+      <Cta />
     </main>
   );
 }
