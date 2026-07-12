@@ -23,15 +23,15 @@ export default function Procedures() {
                   reversed ? "md:pl-8" : "md:pr-8"
                 } text-center md:text-left`}
               >
-                <h3 className="font-heading text-2xl leading-[1.2] font-medium !text-[#121212]">
+                <h3 className="text-2xl leading-[1.2] font-light text-blue-900!">
                   {procedure.title}
                 </h3>
-                <p className="mt-4 text-[0.9375rem] leading-7 text-[#5B5B5B]">
+                <p className="mt-4 text-[0.9375rem] leading-7 text-black">
                   {procedure.description}
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center rounded-md bg-[#2458B3] px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#1b4692]"
+                  className="mt-6 inline-flex items-center rounded-md bg-blue-800 px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#1b4692]"
                 >
                   Learn More
                 </Link>
