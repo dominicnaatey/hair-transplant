@@ -40,14 +40,16 @@ export default function Procedures() {
               </div>
 
               <div className="mx-auto w-full max-w-none">
-                <div className="relative aspect-[1.2/1] overflow-hidden rounded-4xl bg-[#EDEDED]">
-                  <Image
-                    src={procedure.image}
-                    alt={procedure.imageAlt}
-                    fill
-                    sizes="(min-width: 768px) 430px, 100vw"
-                    className={`object-cover ${procedure.imageClassName ?? ""}`}
-                  />
+                <div className="p-2 bg-white rounded-[32px] shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
+                  <div className="relative aspect-[1.2/1] overflow-hidden rounded-[24px] bg-[#EDEDED]">
+                    <Image
+                      src={procedure.image}
+                      alt={procedure.imageAlt}
+                      fill
+                      sizes="(min-width: 768px) 430px, 100vw"
+                      className={`object-cover ${procedure.imageClassName ?? ""}`}
+                    />
+                  </div>
                 </div>
               </div>
             </section>
