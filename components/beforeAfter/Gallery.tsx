@@ -26,7 +26,9 @@ export default function Gallery() {
               </div>
             </div>
 
-            <div className={index % 2 !== 0 ? "lg:order-1" : ""}>
+            <div
+              className={`${index % 2 !== 0 ? "lg:order-1 lg:pl-12 lg:text-right" : "lg:pr-12 lg:text-leftt"}`}
+            >
               <span className="mb-6 inline-block rounded-full bg-[#2458B3]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2458B3]">
                 Case Study {String(index + 1).padStart(2, "0")}
               </span>
