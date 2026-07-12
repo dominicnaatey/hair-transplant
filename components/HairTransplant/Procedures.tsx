@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { procedures } from "@/components/HairTransplant/hairTransplantData";
+import { procedures } from "@/components/HairTransplant/data";
 
-export default function HairTransplantProcedures() {
+export default function Procedures() {
   return (
     <section className="bg-white px-6 pb-16 sm:pb-20 md:pb-24">
       <div className="mx-auto max-w-245 space-y-16 sm:space-y-20 md:space-y-24">

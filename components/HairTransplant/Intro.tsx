@@ -1,4 +1,4 @@
-export default function HairTransplantIntro() {
+export default function Intro() {
   return (
     <section className="bg-white px-6 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-190 text-center">

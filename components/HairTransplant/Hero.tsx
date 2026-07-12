@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function HairTransplantHero() {
+export default function Hero() {
   return (
     <section className="relative h-70 overflow-hidden sm:h-85 md:h-100">
       <Image

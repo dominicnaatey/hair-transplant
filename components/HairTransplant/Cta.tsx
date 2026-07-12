@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HairTransplantCta() {
+export default function Cta() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
