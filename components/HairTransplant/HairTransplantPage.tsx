@@ -49,7 +49,7 @@ const procedures: Procedure[] = [
 export default function HairTransplantPage() {
   return (
     <main className="bg-white">
-        <section className="relative h-[280px] overflow-hidden sm:h-[340px] md:h-[400px]">
+        <section className="relative h-70 overflow-hidden sm:h-85 md:h-100">
           <Image
             src="/images/patient_markings.png"
             alt="Hair transplant procedure"
@@ -60,31 +60,31 @@ export default function HairTransplantPage() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.2)_0%,rgba(15,23,42,0.56)_100%)]" />
           <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-            <h1 className="font-heading text-[34px] font-medium tracking-[-0.02em] text-white sm:text-[42px] md:text-[52px]">
+            <h1 className="font-heading text-[2.125rem] font-medium tracking-[-0.02em] text-white sm:text-[2.625rem] md:text-[3.25rem]">
               Hair Transplant
             </h1>
           </div>
         </section>
 
         <section className="bg-white px-6 py-16 sm:py-20 md:py-24">
-          <div className="mx-auto max-w-[760px] text-center">
-            <h2 className="font-heading text-[28px] leading-[1.2] font-medium tracking-[-0.02em] text-[#121212] sm:text-[34px]">
+          <div className="mx-auto max-w-190 text-center">
+            <h2 className="font-heading text-3xl leading-[1.2] font-medium tracking-[-0.02em] text-[#121212] sm:text-[2.125rem]">
               Discover The Latest Hair Transplant Solutions
             </h2>
             <div className="mx-auto mt-4 h-px w-28 bg-[#D9D9D9]" />
-            <p className="mx-auto mt-6 max-w-[680px] text-[15px] leading-7 text-[#555555] sm:text-base">
+            <p className="mx-auto mt-6 max-w-170 text-[0.9375rem] leading-7 text-[#555555] sm:text-base">
               Explore the latest advancements in hair transplantation and personalized care. We
               provide modern solutions designed to improve density, restore confidence, and support
               long-term scalp health.
             </p>
-            <p className="mx-auto mt-4 max-w-[680px] text-[15px] leading-7 text-[#555555] sm:text-base">
+            <p className="mx-auto mt-4 max-w-170 text-[0.9375rem] leading-7 text-[#555555] sm:text-base">
               Whether you are considering your first treatment or looking for a refined plan after
               previous procedures, our approach combines careful diagnosis with realistic,
               natural-looking results.
             </p>
           </div>
 
-          <div className="mx-auto mt-16 max-w-[980px] space-y-16 sm:mt-20 sm:space-y-20 md:space-y-24">
+          <div className="mx-auto mt-16 max-w-245 space-y-16 sm:mt-20 sm:space-y-20 md:space-y-24">
             {procedures.map((procedure, index) => {
               const reversed = index % 2 === 1;
 
@@ -96,22 +96,22 @@ export default function HairTransplantPage() {
                   }`}
                 >
                   <div className={`${reversed ? 'md:pl-8' : 'md:pr-8'} text-center md:text-left`}>
-                    <h3 className="font-heading text-[24px] leading-[1.2] font-medium text-[#121212]">
+                    <h3 className="font-heading text-2xl leading-[1.2] font-medium text-[#121212]">
                       {procedure.title}
                     </h3>
-                    <p className="mt-4 text-[15px] leading-7 text-[#5B5B5B]">
+                    <p className="mt-4 text-[0.9375rem] leading-7 text-[#5B5B5B]">
                       {procedure.description}
                     </p>
                     <Link
                       href="/contact"
-                      className="mt-6 inline-flex items-center rounded-md bg-[#2458B3] px-5 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#1b4692]"
+                      className="mt-6 inline-flex items-center rounded-md bg-[#2458B3] px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#1b4692]"
                     >
                       Learn More
                     </Link>
                   </div>
 
-                  <div className="mx-auto w-full max-w-[430px]">
-                    <div className="relative aspect-[1.08/1] overflow-hidden rounded-[18px] bg-[#EDEDED]">
+                  <div className="mx-auto w-full max-w-[26.875rem]">
+                    <div className="relative aspect-[1.08/1] overflow-hidden rounded-[1.125rem] bg-[#EDEDED]">
                       <Image
                         src={procedure.image}
                         alt={procedure.imageAlt}
@@ -139,11 +139,11 @@ export default function HairTransplantPage() {
           </div>
           <div className="absolute inset-0 bg-[rgba(7,12,22,0.78)]" />
 
-          <div className="relative mx-auto flex min-h-[270px] max-w-[980px] flex-col items-center justify-center px-6 py-16 text-center">
-            <h2 className="max-w-[620px] font-heading text-[28px] leading-[1.2] font-medium text-white sm:text-[34px]">
+          <div className="relative mx-auto flex min-h-[16.875rem] max-w-245 flex-col items-center justify-center px-6 py-16 text-center">
+            <h2 className="max-w-155 font-heading text-3xl leading-[1.2] font-medium text-white sm:text-[2.125rem]">
               Not Sure Which Treatment Is Right For You? We Are Here To Help
             </h2>
-            <p className="mt-4 max-w-[640px] text-[15px] leading-7 text-white/75 sm:text-base">
+            <p className="mt-4 max-w-160 text-[0.9375rem] leading-7 text-white/75 sm:text-base">
               Speak with our team about your hair goals, current concerns, and the best next step
               for diagnosis, treatment, or long-term restoration planning.
             </p>
