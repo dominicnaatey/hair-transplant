@@ -12,7 +12,7 @@ export default function Procedures() {
           return (
             <section
               key={procedure.title}
-              className={`grid items-center gap-8 md:grid-cols-2 md:gap-12 ${
+              className={`grid items-center gap-8 md:grid-cols-[45%_55%] md:gap-12 ${
                 reversed
                   ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1"
                   : ""
@@ -37,8 +37,8 @@ export default function Procedures() {
                 </Link>
               </div>
 
-              <div className="mx-auto w-full max-w-107.5">
-                <div className="relative aspect-[1.08/1] overflow-hidden rounded-[1.125rem] bg-[#EDEDED]">
+              <div className="mx-auto w-full max-w-none">
+                <div className="relative aspect-[1.2/1] overflow-hidden rounded-[1.125rem] bg-[#EDEDED]">
                   <Image
                     src={procedure.image}
                     alt={procedure.imageAlt}
