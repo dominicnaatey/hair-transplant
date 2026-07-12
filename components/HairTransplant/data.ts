@@ -3,6 +3,7 @@ export type Procedure = {
   description: string;
   image: string;
   imageAlt: string;
+  imageClassName?: string;
 };
 
 export const procedures: Procedure[] = [
@@ -19,6 +20,7 @@ export const procedures: Procedure[] = [
       "FUT is ideal when larger graft numbers are needed. It allows efficient harvesting while helping restore volume across wider thinning areas.",
     image: "/images/patient_markings.png",
     imageAlt: "FUT hair transplant planning and preparation",
+    imageClassName: "scale-125 object-center",
   },
   {
     title: "Eyebrow Transplant",
@@ -33,6 +35,7 @@ export const procedures: Procedure[] = [
       "We restore patchy beard growth with strategic graft placement that improves density while maintaining a realistic beard pattern and direction.",
     image: "/images/solutions_2.png",
     imageAlt: "Beard transplant consultation patient portrait",
+    imageClassName: "scale-115 object-center",
   },
   {
     title: "Female Pattern Baldness Treatment",
