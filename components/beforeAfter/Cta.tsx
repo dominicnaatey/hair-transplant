@@ -18,7 +18,7 @@ export default function Cta() {
           restoration goals and create a personalized treatment plan.
         </p>
         <a
-          href="/contact"
+          href="/book"
           className="themeht-btn bg-white text-[#2458B3] transition-transform hover:bg-gray-100 hover:text-[#2458B3]"
         >
           Book Consultation

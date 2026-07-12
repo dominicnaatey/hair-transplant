@@ -35,10 +35,10 @@ export default function Procedures() {
                   {treatment.description}
                 </p>
                 <Link
-                  href="/contact"
+                  href="/book"
                   className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white"
                 >
-                  Learn More
+                  Book Consultation
                 </Link>
               </div>
 

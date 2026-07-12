@@ -32,7 +32,7 @@ export default function Cta() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-transform hover:scale-105"
             >
               Book Now

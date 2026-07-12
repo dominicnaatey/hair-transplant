@@ -163,7 +163,7 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ s
                     Book a consultation today and let our specialists design a custom restoration plan just for you.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="inline-flex items-center justify-center w-full py-4 bg-white text-[#2458B3] rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-50 transition-colors"
                   >
                     Book Consultation

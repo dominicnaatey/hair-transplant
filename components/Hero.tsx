@@ -119,9 +119,9 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex items-center gap-4"
             >
-              <Link href="/contact" className="themeht-btn primary-btn">
+              <Link href="/book" className="themeht-btn primary-btn">
                 <ArrowRightIcon className="w-4 h-4" />
-                Contact Us
+                Book Appointment
               </Link>
               <Link
                 href="/about"

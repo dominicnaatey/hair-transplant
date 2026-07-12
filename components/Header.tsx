@@ -52,7 +52,7 @@ export default function Header() {
             <PhoneIcon className="w-3.5 h-3.5" />
             +1-555-234-5678
           </a>
-          <Link href="/contact" className="themeht-btn primary-btn !py-2 !px-6 !text-xs">
+          <Link href="/book" className="themeht-btn primary-btn !py-2 !px-6 !text-xs">
             Book Appointment
           </Link>
         </div>
@@ -166,7 +166,7 @@ export default function Header() {
           </Link>
         ))}
         <Link 
-          href="/contact" 
+          href="/book" 
           onClick={() => setMobileOpen(false)}
           className="themeht-btn primary-btn mt-4 self-start"
         >

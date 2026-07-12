@@ -78,8 +78,8 @@ export default function AboutPage() {
                 Our team focuses on the long-term health of the scalp and hair, blending medically
                 informed care with practical aftercare and transparent expectations.
               </p>
-              <Link href="/contact" className="themeht-btn primary-btn">
-                Book a Consultation
+              <Link href="/book" className="themeht-btn primary-btn">
+                Book Appointment
               </Link>
             </div>
             <div className="relative">
