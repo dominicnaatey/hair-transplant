@@ -60,7 +60,7 @@ export default function HairTransplantPage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.2)_0%,rgba(15,23,42,0.56)_100%)]" />
         <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-          <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] !text-white md:text-5xl">
+          <h1 className="font-heading text-3xl font-medium tracking-[1.2] text-white! md:text-5xl">
             Hair Transplant
           </h1>
         </div>
@@ -68,7 +68,7 @@ export default function HairTransplantPage() {
 
       <section className="bg-white px-6 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-190 text-center">
-          <h2 className="font-heading text-3xl leading-[1.2] font-medium tracking-[-0.02em] text-[#121212] sm:text-[34px]">
+          <h2 className="font-heading text-3xl leading-[1.2] font-medium text-blue-900 sm:text-[34px]">
             Discover The Latest Hair Transplant Solutions
           </h2>
           <div className="mx-auto mt-4 h-px w-28 bg-[#D9D9D9]" />
