@@ -31,7 +31,7 @@ export default function Procedures() {
                 <h3 className="font-heading text-3xl leading-tight font-medium text-[#222] md:text-4xl">
                   {treatment.title}
                 </h3>
-                <p className="mt-6 mb-10 text-balance text-[17px] leading-[27px] text-[#666]">
+                <p className="mt-6 mb-10 text-balance text-[17px] leading-6.75 text-[#666]">
                   {treatment.description}
                 </p>
                 <Link
@@ -43,8 +43,8 @@ export default function Procedures() {
               </div>
 
               <div className="mx-auto w-full max-w-none">
-                <div className="rounded-[32px] bg-white p-2 shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
-                  <div className="relative aspect-[1.2/1] overflow-hidden rounded-[24px] bg-[#EDEDED]">
+                <div className="rounded-4xl bg-white p-2 shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
+                  <div className="relative aspect-[1.2/1] overflow-hidden rounded-3xl bg-[#EDEDED]">
                     <Image
                       src={treatment.image}
                       alt={treatment.imageAlt}
