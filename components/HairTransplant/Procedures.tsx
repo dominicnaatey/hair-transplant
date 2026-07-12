@@ -40,7 +40,7 @@ export default function Procedures() {
               </div>
 
               <div className="mx-auto w-full max-w-none">
-                <div className="relative aspect-[1.2/1] overflow-hidden rounded-[1.125rem] bg-[#EDEDED]">
+                <div className="relative aspect-[1.2/1] overflow-hidden rounded-4xl bg-[#EDEDED]">
                   <Image
                     src={procedure.image}
                     alt={procedure.imageAlt}
