@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-80 overflow-hidden sm:h-96 md:h-[500px]">
+    <section className="relative h-80 overflow-hidden sm:h-96 md:h-125">
       <Image
         src="/images/hero_bg_1.png"
         alt="Advanced treatment consultation"
