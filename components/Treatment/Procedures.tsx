@@ -5,8 +5,8 @@ import { treatments } from "@/components/Treatment/data";
 
 export default function Procedures() {
   return (
-    <section className="bg-white px-6 py-20 lg:py-32">
-      <div className="mx-auto max-w-7xl space-y-24 lg:space-y-36">
+    <section className="bg-white py-20 lg:py-32">
+      <div className="max-w-7xl space-y-24 mx-auto px-6 lg:space-y-36">
         {treatments.map((treatment, index) => {
           const reversed = index % 2 === 1;
 
@@ -16,7 +16,7 @@ export default function Procedures() {
               direction="up"
               distance={40}
               className={`grid items-center gap-12 lg:gap-16 ${
-                reversed ? "lg:grid-cols-[55%_45%]" : "lg:grid-cols-[45%_55%]"
+                reversed ? "lg:grid-cols-[55fr_45fr]" : "lg:grid-cols-[45fr_55fr]"
               } ${
                 reversed
                   ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
@@ -25,7 +25,9 @@ export default function Procedures() {
             >
               <div
                 className={`${
-                  reversed ? "lg:pl-12 lg:text-left" : "lg:pr-12 lg:text-right"
+                  reversed
+                    ? "lg:justify-self-end lg:text-left"
+                    : "lg:justify-self-start lg:text-right"
                 } text-center`}
               >
                 <h3 className="font-heading text-3xl leading-tight font-medium text-[#222] md:text-4xl">
@@ -44,7 +46,7 @@ export default function Procedures() {
 
               <div className="mx-auto w-full max-w-none">
                 <div className="rounded-4xl bg-white p-2 shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
-                  <div className="relative aspect-[1.2/1] overflow-hidden rounded-3xl bg-[#EDEDED]">
+                  <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-[#EDEDED]">
                     <Image
                       src={treatment.image}
                       alt={treatment.imageAlt}
