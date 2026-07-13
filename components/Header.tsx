@@ -39,8 +39,12 @@ export default function Header() {
       >
         {/* Phone + Appointment row */}
         <div
-          className={`hidden lg:flex items-center justify-end gap-6 px-12 py-3 border-b transition-colors duration-500 ${
+          className={`hidden overflow-hidden lg:flex items-center justify-end gap-6 px-12 border-b transition-all duration-500 ${
             transparent ? 'border-white/10' : 'border-gray-100'
+          } ${
+            scrolled
+              ? 'max-h-0 py-0 opacity-0 pointer-events-none'
+              : 'max-h-20 py-3 opacity-100'
           }`}
         >
           <a
