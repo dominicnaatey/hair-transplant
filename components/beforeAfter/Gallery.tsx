@@ -13,8 +13,8 @@ export default function Gallery() {
             distance={40}
             className={`grid grid-cols-1 items-center gap-10 lg:gap-16 ${
               index % 2 !== 0
-                ? "lg:grid-cols-[45%_55%]"
-                : "lg:grid-cols-[55%_45%]"
+                ? "lg:grid-cols-[45fr_55fr]"
+                : "lg:grid-cols-[55fr_45fr]"
             }`}
           >
             <div className={index % 2 !== 0 ? "lg:order-2" : ""}>
