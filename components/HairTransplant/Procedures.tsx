@@ -5,8 +5,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Procedures() {
   return (
-    <section className="bg-white px-6 py-20 lg:py-32">
-      <div className="mx-auto max-w-7xl space-y-24 lg:space-y-36">
+    <section className="bg-white py-20 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 space-y-24 lg:space-y-36">
         {procedures.map((procedure, index) => {
           const reversed = index % 2 === 1;
 
@@ -16,7 +16,7 @@ export default function Procedures() {
               direction="up"
               distance={40}
               className={`grid items-center gap-12 lg:gap-16 ${
-                reversed ? "lg:grid-cols-[55%_45%]" : "lg:grid-cols-[45%_55%]"
+                reversed ? "lg:grid-cols-[55fr_45fr]" : "lg:grid-cols-[45fr_55fr]"
               } ${
                 reversed
                   ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
@@ -44,7 +44,7 @@ export default function Procedures() {
 
               <div className="mx-auto w-full max-w-none">
                 <div className="p-2 bg-white rounded-4xl shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
-                  <div className="relative aspect-[1.2/1] overflow-hidden rounded-3xl bg-[#EDEDED]">
+                  <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-[#EDEDED]">
                     <Image
                       src={procedure.image}
                       alt={procedure.imageAlt}
