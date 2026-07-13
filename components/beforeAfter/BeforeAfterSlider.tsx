@@ -56,7 +56,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden rounded-[24px] cursor-ew-resize select-none"
+      className="relative w-full overflow-hidden rounded-3xl cursor-ew-resize select-none"
       style={{ aspectRatio: '4/3' }}
       onMouseDown={(e) => {
         setIsDragging(true);
