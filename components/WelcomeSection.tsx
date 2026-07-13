@@ -12,19 +12,19 @@ const stats = [
     end: 100,
     suffix: '%',
     title: 'Natural Looking Results',
-    desc: 'Our advanced follicular extraction ensures your hair grows naturally, blending seamlessly with your existing hairline.',
+    desc: 'Natural density and seamless growth that blends with your hairline.',
   },
   {
     end: 15,
     suffix: 'k+',
     title: 'Successful Procedures',
-    desc: 'We have transformed the lives of thousands of patients, restoring their confidence with our proven methodologies.',
+    desc: 'Thousands of successful procedures delivered with trusted clinical expertise.',
   },
   {
     end: 99,
     suffix: '%',
     title: 'Patient Satisfaction',
-    desc: 'Our dedicated team provides unparalleled post-operative care, ensuring every patient is thrilled with their outcome.',
+    desc: 'Exceptional care and support keep patients confident and satisfied.',
   },
 ];
 
@@ -48,8 +48,8 @@ export default function WelcomeSection() {
               />
             </div>
 
-            <p className="mb-8 max-w-90 text-[17px] leading-[27px] text-[#667085]">
-              At Hairise, we utilize industry-leading techniques to provide permanent, natural-looking hair restoration. Our expert surgeons and state-of-the-art facilities guarantee you receive the highest standard of care on your journey to renewed confidence.
+            <p className="mb-8 max-w-90 text-[17px] leading-6.75 text-[#667085]">
+              Advanced hair restoration with natural results, trusted specialists, and exceptional patient care.
             </p>
 
             <ul className="mb-10 space-y-4">
