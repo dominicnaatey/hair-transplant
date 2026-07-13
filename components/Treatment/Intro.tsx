@@ -13,14 +13,12 @@ export default function Intro() {
         </h2>
         <div className="mx-auto mb-10 mt-8 h-px w-20 bg-[#2458B3]" />
         <p className="mx-auto mb-8 max-w-3xl text-[17px] leading-[27px] text-[#666]">
-          Our treatment options are designed for patients who want to strengthen
-          the scalp, support healthier follicles, and improve the appearance of
-          thinning without immediately moving to surgery.
-        </p>
-        <p className="mx-auto max-w-3xl text-[17px] leading-[27px] text-[#666]">
-          From regenerative therapies to precision scalp care, each plan is
-          selected around your level of hair loss, recovery goals, and the type
-          of support needed for visible, sustainable progress.
+          ORevitalize your hair without surgery! Our hair loss treatments offer 
+          a non-surgical solution to thinning hair and receding hairlines. Our 
+          expert team specializes in personalized treatments tailored to your 
+          unique needs, ensuring effective results without the need for surgery. 
+          Experience the confidence-boosting transformation of fuller, more vibrant 
+          hair with our hair loss treatments today!
         </p>
       </ScrollReveal>
     </section>
