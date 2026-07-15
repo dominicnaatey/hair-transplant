@@ -20,6 +20,20 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
+  
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', date: '', time: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call for quick contact
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }, 1200);
+  };
 
   const goTo = useCallback((idx: number) => {
     if (animating) return;
@@ -40,7 +54,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative w-full overflow-hidden"
-      style={{ height: '100svh', minHeight: 620 }}
+      style={{ minHeight: '100svh' }}
     >
       {/* ─── Slide Backgrounds ─── */}
       {slides.map((slide, i) => (
@@ -65,74 +79,169 @@ export default function Hero() {
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full border border-white/5 animate-float-slow pointer-events-none" />
 
       {/* ─── Hero Content ─── */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 lg:px-24 xl:px-32">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.3 } }}
-            transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="absolute"
-          >
-            {/* Subtitle tag */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="inline-flex items-center gap-2 mb-6"
-              style={{
-                fontFamily: 'var(--font-dm-sans), DM Sans, sans-serif',
-                fontSize: '12px',
-                fontWeight: 700,
-                letterSpacing: '0.3em',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.8)',
-              }}
-            >
-              <span className="inline-block w-8 h-px bg-[#2458B3]" />
-              {slides[current].subtitle}
-            </motion.div>
+      <div className="relative z-10 min-h-[100svh] flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center pt-16 lg:pt-0">
+          
+          {/* Left: Text Content */}
+          <div className="lg:col-span-7 relative h-[350px] lg:h-[400px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="absolute inset-0 flex flex-col justify-center"
+              >
+                {/* Subtitle tag */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  className="inline-flex items-center gap-2 mb-6"
+                  style={{
+                    fontFamily: 'var(--font-dm-sans), DM Sans, sans-serif',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    letterSpacing: '0.3em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255,255,255,0.8)',
+                  }}
+                >
+                  <span className="inline-block w-8 h-px bg-[#2458B3]" />
+                  {slides[current].subtitle}
+                </motion.div>
 
-            {/* Main heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="mb-8 whitespace-pre-line"
-              style={{
-                fontFamily: 'var(--font-chivo), Chivo, serif',
-                fontWeight: 500,
-                fontSize: 'clamp(48px, 7vw, 90px)',
-                lineHeight: '1.1',
-                letterSpacing: '-0.02em',
-                color: '#ffffff',
-              }}
-            >
-              {slides[current].title}
-            </motion.h1>
+                {/* Main heading */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="mb-8 whitespace-pre-line"
+                  style={{
+                    fontFamily: 'var(--font-chivo), Chivo, serif',
+                    fontWeight: 500,
+                    fontSize: 'clamp(48px, 6vw, 80px)',
+                    lineHeight: '1.1',
+                    letterSpacing: '-0.02em',
+                    color: '#ffffff',
+                  }}
+                >
+                  {slides[current].title}
+                </motion.h1>
 
-            {/* CTA */}
+                {/* CTA */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="flex flex-wrap items-center gap-4"
+                >
+                  <Link href="/book" className="themeht-btn primary-btn">
+                    <ArrowRightIcon className="w-4 h-4" />
+                    Book Appointment
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="flex items-center gap-2 text-white/80 hover:text-white text-sm font-semibold tracking-widest uppercase transition-colors"
+                  >
+                    Learn More
+                    <span className="w-8 h-px bg-white/40 inline-block" />
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Right: Quick Contact Form */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex items-center gap-4"
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="w-full max-w-[420px] bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[32px] shadow-2xl relative overflow-hidden"
             >
-              <Link href="/book" className="themeht-btn primary-btn">
-                <ArrowRightIcon className="w-4 h-4" />
-                Book Appointment
-              </Link>
-              <Link
-                href="/about"
-                className="flex items-center gap-2 text-white/80 hover:text-white text-sm font-semibold tracking-widest uppercase transition-colors"
-              >
-                Learn More
-                <span className="w-8 h-px bg-white/40 inline-block" />
-              </Link>
+              {/* Decorative glare */}
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-white/10 to-transparent pointer-events-none" />
+              
+              {submitted ? (
+                <div className="text-center py-8 relative z-10">
+                  <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-heading text-white mb-2">Request Received</h3>
+                  <p className="text-white/70 text-sm">Our team will call you back shortly to discuss your restoration goals.</p>
+                </div>
+              ) : (
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-heading font-medium text-white mb-2">Book a Free Consultation</h3>
+                  <p className="text-white/70 text-sm mb-6">Leave your details and a specialist will contact you to confirm your appointment.</p>
+                  
+                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                    <div>
+                      <input 
+                        type="text" 
+                        required
+                        placeholder="Full Name" 
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <input 
+                        type="tel" 
+                        required
+                        placeholder="Phone Number" 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <input 
+                        type="email" 
+                        placeholder="Email (Optional)" 
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <input 
+                        type="date" 
+                        value={formData.date}
+                        onChange={(e) => setFormData({...formData, date: e.target.value})}
+                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]"
+                      />
+                      <input 
+                        type="time" 
+                        value={formData.time}
+                        onChange={(e) => setFormData({...formData, time: e.target.value})}
+                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]"
+                      />
+                    </div>
+                    <button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className={`w-full bg-white text-[#222] font-bold tracking-wider uppercase text-sm py-4 rounded-2xl shadow-lg transition-all ${isSubmitting ? 'opacity-70' : 'hover:bg-gray-100 hover:-translate-y-0.5'}`}
+                    >
+                      {isSubmitting ? 'Sending...' : 'Book Consultation'}
+                    </button>
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-70">
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} className="text-white">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                      <span className="text-[11px] text-white">Your information is secure and confidential.</span>
+                    </div>
+                  </form>
+                </div>
+              )}
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </div>
       </div>
 
       {/* ─── Slide Counter ─── */}
