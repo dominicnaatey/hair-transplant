@@ -29,7 +29,7 @@ export default function Page() {
       <MarqueeBanner />
 
       {/* Services / Diagnosis */}
-      <DiagnosisSection />
+      {/* <DiagnosisSection /> */}
 
       {/* Case Studies grid */}
       <CaseStudies />
@@ -38,7 +38,7 @@ export default function Page() {
       <TestimonialSection />
 
       {/* Contact form */}
-      <ContactSection />
+      {/* <ContactSection /> */}
 
       {/* Blog posts */}
       {/* <BlogSection /> */}
