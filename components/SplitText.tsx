@@ -24,12 +24,12 @@ export default function SplitText({ text, as: Tag = 'h2', className = '', delay 
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring', damping: 12, stiffness: 100 },
+      transition: { type: 'spring' as const, damping: 12, stiffness: 100 },
     },
     hidden: {
       opacity: 0,
       y: 20,
-      transition: { type: 'spring', damping: 12, stiffness: 100 },
+      transition: { type: 'spring' as const, damping: 12, stiffness: 100 },
     },
   };
 
