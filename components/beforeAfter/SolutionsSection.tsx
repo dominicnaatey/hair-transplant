@@ -119,7 +119,7 @@ export default function SolutionsSection() {
           {steps.map((step, i) => (
             <div
               key={i}
-              className="step-box"
+              className=""
               style={{
                 position: 'sticky',
                 top: `calc(120px + ${i * 24}px)`,
