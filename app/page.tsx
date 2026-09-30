@@ -17,7 +17,7 @@ export default function Page() {
       <Hero />
 
       {/* Features strip */}
-      <FeaturesRow />
+      {/* <FeaturesRow /> */}
 
       {/* Welcome / About */}
       <WelcomeSection />
