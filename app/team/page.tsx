@@ -5,7 +5,7 @@ export default function TeamPage() {
   return (
     <PageShell
       title="Our Team"
-      subtitle="Meet the experts behind Hairise's world-class hair restoration."
+      subtitle="Meet the experts behind Hairmz's world-class hair restoration."
       breadcrumbs={[{ label: 'Team' }]}
     >
       <section className="py-24" style={{ background: '#eff4f8' }}>

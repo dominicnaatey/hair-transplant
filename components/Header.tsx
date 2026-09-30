@@ -89,7 +89,7 @@ export default function Header() {
               <span
                 style={{ fontFamily: 'var(--font-chivo), Chivo, serif', fontWeight: 500, fontSize: '24px', letterSpacing: '-0.02em' }}
               >
-                Hairise
+                Hairmz
               </span>
             </div>
           </Link>

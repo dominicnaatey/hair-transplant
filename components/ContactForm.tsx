@@ -53,7 +53,7 @@ export default function ContactForm({
     );
 
     if (typeof window !== 'undefined') {
-      window.location.href = `mailto:hello@hairise.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@Hairmz.com?subject=${subject}&body=${body}`;
     }
 
     setStatus('success');

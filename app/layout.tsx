@@ -20,7 +20,7 @@ const chivo = Chivo({
 });
 
 export const metadata: Metadata = {
-  title: "Hairise | Hair Transplant Clinic",
+  title: "Hairmz | Hair Transplant Clinic",
   description: "Modern hair transplant solutions with proven results and compassionate care — from diagnosis to full recovery.",
   keywords: "hair transplant, hair restoration, hair loss treatment, FUE, PRP, baldness treatment",
 };

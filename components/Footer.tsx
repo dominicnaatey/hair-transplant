@@ -45,11 +45,11 @@ export default function Footer() {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Hairise
+                Hairmz
               </span>
             </div>
             <p style={{ fontSize: 15, lineHeight: '26px', maxWidth: 340, marginBottom: 24 }}>
-              Hairise is Ghana's leading hair transplant and restoration center.
+              Hairmz is Ghana's leading hair transplant and restoration center.
               We restore confidence through precision, innovation, and care.
             </p>
             {/* Social icons */}
@@ -126,7 +126,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { icon: <PinIcon />, text: '5th Street, New York, USA' },
-                { icon: <MailIcon />, text: 'contact@hairise.com' },
+                { icon: <MailIcon />, text: 'contact@Hairmz.com' },
                 { icon: <PhoneIcon />, text: '+1-555-234-5678' },
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3" style={{ fontSize: 14 }}>
@@ -154,7 +154,7 @@ export default function Footer() {
         style={{ borderTop: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}
       >
         Copyright &copy; {new Date().getFullYear()} All Rights Reserved |{' '}
-        <span style={{ color: '#2458B3' }}>Hairise</span> — Advanced Hair Transplant Clinic
+        <span style={{ color: '#2458B3' }}>Hairmz</span> — Advanced Hair Transplant Clinic
       </div>
     </footer>
   );

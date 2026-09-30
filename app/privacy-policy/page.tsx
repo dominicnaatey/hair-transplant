@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
           <div className="bg-white rounded-[32px] p-8 lg:p-12 shadow-sm">
             <h2 className="text-2xl font-bold mb-6 text-[#222]">1. Information We Collect</h2>
             <p className="text-[#555] mb-8 leading-relaxed">
-              At Hairise, we are committed to protecting your privacy. We collect information that you provide directly to us when you fill out a form, request a consultation, or contact us. This may include your name, email address, phone number, and medical history relevant to your hair restoration journey.
+              At Hairmz, we are committed to protecting your privacy. We collect information that you provide directly to us when you fill out a form, request a consultation, or contact us. This may include your name, email address, phone number, and medical history relevant to your hair restoration journey.
             </p>
             <h2 className="text-2xl font-bold mb-6 text-[#222]">2. How We Use Your Information</h2>
             <p className="text-[#555] mb-8 leading-relaxed">

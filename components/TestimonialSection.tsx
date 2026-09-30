@@ -10,14 +10,14 @@ import { section } from 'framer-motion/client';
 
 const testimonials = [
   {
-    quote: "My experience at Hairise was outstanding. The attention to detail and personalized care from the doctors made me feel completely at ease throughout the entire process.",
+    quote: "My experience at Hairmz was outstanding. The attention to detail and personalized care from the doctors made me feel completely at ease throughout the entire process.",
     name: 'Simon Amour',
     role: 'Technical Director',
     avatar: '/images/testimonial_avatar_1.png',
     stars: 5,
   },
   {
-    quote: "The team at Hairise completely transformed my confidence. The procedure was painless and the results exceeded everything I hoped for.",
+    quote: "The team at Hairmz completely transformed my confidence. The procedure was painless and the results exceeded everything I hoped for.",
     name: 'Robbie Lee',
     role: 'Genetic Specialist',
     avatar: '/images/testimonial_avatar_2.png',

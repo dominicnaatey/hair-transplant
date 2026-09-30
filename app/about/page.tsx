@@ -35,7 +35,7 @@ const values = [
 export default function AboutPage() {
   return (
     <PageShell
-      title="About Hairise"
+      title="About Hairmz"
       subtitle="We combine clinical precision, calm guidance, and patient-focused care to help people feel confident again."
       breadcrumbs={[{ label: 'About Us' }]}
     >
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 A Modern Approach to<br />Hair Restoration
               </h2>
               <p style={{ color: '#666', fontSize: 17, lineHeight: '27px', marginBottom: 16 }}>
-                Hairise was built around one simple idea: every client deserves clear guidance,
+                Hairmz was built around one simple idea: every client deserves clear guidance,
                 thoughtful treatment planning, and a calm experience from consultation to recovery.
               </p>
               <p style={{ color: '#666', fontSize: 17, lineHeight: '27px', marginBottom: 32 }}>

@@ -12,7 +12,7 @@ export default function TermsAndConditionsPage() {
           <div className="bg-white rounded-[32px] p-8 lg:p-12 shadow-sm">
             <h2 className="text-2xl font-bold mb-6 text-[#222]">1. Introduction</h2>
             <p className="text-[#555] mb-8 leading-relaxed">
-              By accessing and using the Hairise website and services, you accept and agree to be bound by the terms and provision of this agreement.
+              By accessing and using the Hairmz website and services, you accept and agree to be bound by the terms and provision of this agreement.
             </p>
             <h2 className="text-2xl font-bold mb-6 text-[#222]">2. Medical Disclaimer</h2>
             <p className="text-[#555] mb-8 leading-relaxed">
