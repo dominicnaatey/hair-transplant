@@ -16,7 +16,7 @@ export default function Procedures() {
               direction="up"
               distance={40}
               // On desktop: two columns, alternating sides. On mobile: single column.
-              className={`grid items-start gap-6 lg:gap-16 ${
+              className={`grid items-center gap-6 lg:gap-16 ${
                 reversed
                   ? "lg:grid-cols-[55fr_45fr]"
                   : "lg:grid-cols-[45fr_55fr]"
