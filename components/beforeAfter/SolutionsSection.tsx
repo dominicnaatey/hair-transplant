@@ -100,14 +100,7 @@ function StepCard({ step, index }: { step: typeof steps[number]; index: number }
               {step.body}
             </p>
 
-            <Link
-              href={step.btnHref}
-              className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white mb-8 self-start"
-            >
-              {step.btnLabel}
-            </Link>
-
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 mb-8">
               {/* Col 1 */}
               <div>
                 <h5
@@ -145,6 +138,13 @@ function StepCard({ step, index }: { step: typeof steps[number]; index: number }
                 </ul>
               </div>
             </div>
+
+            <Link
+              href={step.btnHref}
+              className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white self-start"
+            >
+              {step.btnLabel}
+            </Link>
           </div>
 
           {/* Image */}
