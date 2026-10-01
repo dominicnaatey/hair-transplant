@@ -43,7 +43,7 @@ export default function WelcomeSection() {
               <SplitText
                 text="Welcome to our Hair Transplant Center"
                 as="h2"
-                className="ht-split-text text-4xl md:text-4xl lg:text-5xl"
+                className="ht-split-text text-3xl md:text-4xl lg:text-5xl"
                 delay={40}
               />
             </div>
