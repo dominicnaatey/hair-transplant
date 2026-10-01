@@ -13,6 +13,8 @@ const steps = [
     col2Title: 'Types Of Hair Loss',
     col2Items: ['International Standards', 'Life Long Results'],
     image: '/images/hair_treatment.png',
+    btnLabel: 'Explore Solutions',
+    btnHref: '/hair-transplant',
   },
   {
     title: 'Amazing Results, Every Time',
@@ -22,6 +24,8 @@ const steps = [
     col2Title: 'Recovery & Growth',
     col2Items: ['Full Results in 12 Months', '98% Graft Survival'],
     image: '/images/solutions_1.png',
+    btnLabel: 'Book Appointment',
+    btnHref: '/book',
   },
   {
     title: 'Natural Looking Results',
@@ -31,6 +35,8 @@ const steps = [
     col2Title: 'Post-Op Care',
     col2Items: ['24/7 Specialist Support', 'Personalised Protocol'],
     image: '/images/solutions_2.png',
+    btnLabel: 'See Results',
+    btnHref: '/results',
   },
 ];
 
@@ -155,6 +161,13 @@ export default function SolutionsSection() {
                       {step.body}
                     </p>
 
+                    <Link
+                      href={step.btnHref}
+                      className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white mb-8 self-start"
+                    >
+                      {step.btnLabel}
+                    </Link>
+
                     <div className="grid grid-cols-2 gap-8">
                       {/* Col 1 */}
                       <div>
@@ -214,21 +227,6 @@ export default function SolutionsSection() {
                     />
                     <div className="absolute inset-0 bg-linear-to-r from-white/20 to-transparent" />
                   </div>
-                </div>
-
-                {/* Corner button-style-2 */}
-                <div className="button-style-2">
-                  <svg viewBox="0 0 100 100" style={{ width: 40, height: 40 }}>
-                    <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
-                  </svg>
-                  <Link href="/book" className="button-style-2-link" aria-label="Book appointment">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
-                    </svg>
-                  </Link>
-                  <svg viewBox="0 0 100 100" style={{ width: 40, height: 40, transform: 'scaleX(-1)' }}>
-                    <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#FFFFFF" />
-                  </svg>
                 </div>
 
                 {/* Step number badge */}
