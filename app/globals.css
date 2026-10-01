@@ -164,8 +164,6 @@ img { max-width: 100%; }
 .section-title {
   font-family: var(--font-chivo), 'Chivo', Georgia, serif;
   font-weight: 500;
-  font-size: 48px;
-  line-height: 58px;
   color: var(--dark);
   margin-bottom: 20px;
 }
