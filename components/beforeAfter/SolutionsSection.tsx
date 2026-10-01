@@ -89,7 +89,7 @@ export default function SolutionsSection() {
   }, []);
 
   return (
-    <section className="w-full py-24" style={{ background: '#FFFFFF' }}>
+    <section className="w-full py-24 bg-[#F9F8F6]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section heading */}
         <div className="mb-16">
