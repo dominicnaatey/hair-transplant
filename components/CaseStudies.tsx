@@ -27,7 +27,7 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="w-full py-24" style={{ background: '#F9F8F6' }}>
+    <section className="w-full py-24 bg-white">
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-14">
