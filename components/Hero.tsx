@@ -76,7 +76,7 @@ export default function Hero() {
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full border border-white/5 animate-float-slow pointer-events-none" />
 
       {/* ─── Hero Content ─── */}
-      <div className="relative z-10 min-h-[60vh] lg:min-h-svh flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
+      <div className="relative z-10 min-h-[60vh] lg:min-h-svh flex items-center px-8 lg:px-24 xl:px-32 py-12 lg:py-0">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center pt-16 lg:pt-0">
 
           {/* Left: Text Content */}
@@ -127,12 +127,12 @@ export default function Hero() {
           </div>
 
           {/* Right: Quick Contact Form (hidden) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end hidden">
+          {/* <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="w-full max-w-[420px] bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[32px] shadow-2xl relative overflow-hidden"
+              className="w-full max-w-105 bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-4xl shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-white/10 to-transparent pointer-events-none" />
 
@@ -172,7 +172,7 @@ export default function Hero() {
                 </div>
               )}
             </motion.div>
-          </div>
+          </div> */}
         </div>
       </div>
 
