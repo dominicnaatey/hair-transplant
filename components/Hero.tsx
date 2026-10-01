@@ -52,7 +52,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden min-h-svh"
+      className="relative w-full overflow-hidden min-h-[60vh] lg:min-h-svh"
     >
       {/* ─── Slide Backgrounds ─── */}
       {slides.map((slide, i) => (
@@ -76,7 +76,7 @@ export default function Hero() {
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full border border-white/5 animate-float-slow pointer-events-none" />
 
       {/* ─── Hero Content ─── */}
-      <div className="relative z-10 min-h-svh flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
+      <div className="relative z-10 min-h-[60vh] lg:min-h-svh flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center pt-16 lg:pt-0">
 
           {/* Left: Text Content */}
