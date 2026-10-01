@@ -15,7 +15,7 @@ export default function Procedures() {
               key={procedure.title}
               direction="up"
               distance={40}
-              className={`grid items-center gap-12 lg:gap-16 ${
+              className={`grid items-center gap-6 lg:gap-16 ${
                 reversed ? "lg:grid-cols-[55fr_45fr]" : "lg:grid-cols-[45fr_55fr]"
               } ${
                 reversed
@@ -23,26 +23,29 @@ export default function Procedures() {
                   : ""
               }`}
             >
+              {/* Text block — on mobile sits below image+button */}
               <div
-                className={`${
+                className={`order-3 lg:order-none ${
                   reversed ? "lg:pl-12 lg:text-left" : "lg:pr-12 lg:text-right"
                 } text-center`}
               >
                 <h3 className="font-heading text-3xl md:text-4xl leading-tight font-medium text-[#222]">
                   {procedure.title}
                 </h3>
-                <p className="mt-6 mb-10 text-[17px] text-balance leading-6.75 text-[#666]">
+                <p className="mt-6 text-[17px] text-balance leading-6.75 text-[#666]">
                   {procedure.description}
                 </p>
+                {/* Button hidden on mobile — shown on desktop only */}
                 <Link
                   href="/book"
-                  className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white"
+                  className="mt-10 hidden lg:inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white"
                 >
                   Book Consultation
                 </Link>
               </div>
 
-              <div className="mx-auto w-full max-w-none">
+              {/* Image — order-1 on mobile so it appears first */}
+              <div className="order-1 lg:order-none mx-auto w-full max-w-none">
                 <div className="p-2 bg-white rounded-4xl shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
                   <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-[#EDEDED]">
                     <Image
@@ -54,6 +57,16 @@ export default function Procedures() {
                     />
                   </div>
                 </div>
+              </div>
+
+              {/* Button shown on mobile only, right after the image (order-2) */}
+              <div className="order-2 lg:hidden flex justify-center">
+                <Link
+                  href="/book"
+                  className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white"
+                >
+                  Book Consultation
+                </Link>
               </div>
             </ScrollReveal>
           );
