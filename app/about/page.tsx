@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PageShell from '@/components/PageShell';
 import Image from 'next/image';
+import { Target, Heart, Microscope, BadgeCheck } from 'lucide-react';
 
 const stats = [
   { value: '15+', label: 'Years Experience' },
@@ -13,22 +14,22 @@ const values = [
   {
     title: 'Clear Guidance',
     text: 'Every step is explained in plain language so you feel informed, never rushed.',
-    icon: '🎯',
+    icon: Target,
   },
   {
     title: 'Calm Care',
     text: 'A welcoming clinical environment focused on comfort, trust, and realistic expectations.',
-    icon: '❤️',
+    icon: Heart,
   },
   {
     title: 'Thoughtful Planning',
     text: 'Treatment choices are tailored around your goals, stage of hair loss, and long-term scalp health.',
-    icon: '🔬',
+    icon: Microscope,
   },
   {
     title: 'Proven Results',
     text: 'Advanced FUE and PRP techniques with natural-looking, permanent outcomes.',
-    icon: '✅',
+    icon: BadgeCheck,
   },
 ];
 
@@ -173,7 +174,9 @@ export default function AboutPage() {
                 className="p-8 rounded-2xl border border-[#e8e4dc] hover:border-[#2458B3] hover:shadow-lg transition-all duration-300 group"
                 style={{ background: '#F9F8F6' }}
               >
-                <div className="text-4xl mb-5">{v.icon}</div>
+                <div className="mb-5">
+                  <v.icon size={36} strokeWidth={1.5} color="#2458B3" />
+                </div>
                 <h4
                   style={{
                     fontFamily: 'var(--font-chivo), Chivo, serif',

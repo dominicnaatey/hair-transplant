@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { submitContactForm } from '@/app/actions/contact';
+import { CheckCircle2 } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -102,8 +103,9 @@ export default function ContactSection() {
             </h2>
 
             {sent && (
-              <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
-                ✓ Thank you! We&rsquo;ll get back to you shortly.
+              <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium flex items-center gap-2">
+                <CheckCircle2 size={16} strokeWidth={2} />
+                Thank you! We&rsquo;ll get back to you shortly.
               </div>
             )}
 
