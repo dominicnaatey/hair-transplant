@@ -15,22 +15,22 @@ export default function Procedures() {
               key={treatment.title}
               direction="up"
               distance={40}
-              className={`grid items-center gap-12 lg:gap-16 ${
-                reversed ? "lg:grid-cols-[55fr_45fr]" : "lg:grid-cols-[45fr_55fr]"
-              } ${
+              // On desktop: two columns, alternating sides. On mobile: single column.
+              className={`grid items-center gap-6 lg:gap-16 ${
                 reversed
-                  ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
-                  : ""
+                  ? "lg:grid-cols-[55fr_45fr]"
+                  : "lg:grid-cols-[45fr_55fr]"
               }`}
             >
+              {/* ── Text column (desktop only) ─────────────────────────────── */}
               <div
-                className={`${
+                className={`hidden lg:block ${
                   reversed
-                    ? "lg:justify-self-end lg:text-left"
-                    : "lg:justify-self-start lg:text-right"
-                } text-center`}
+                    ? "lg:pl-12 lg:text-left lg:order-2"
+                    : "lg:pr-12 lg:text-right lg:order-1"
+                }`}
               >
-                <h3 className="font-heading text-3xl leading-tight font-medium text-[#222] md:text-4xl">
+                <h3 className="font-heading text-3xl md:text-4xl leading-tight font-medium text-[#222]">
                   {treatment.title}
                 </h3>
                 <p className="mt-6 mb-10 text-balance text-[17px] leading-6.75 text-[#666]">
@@ -44,7 +44,13 @@ export default function Procedures() {
                 </Link>
               </div>
 
-              <div className="mx-auto w-full max-w-none">
+              {/* ── Image column ──────────────────────────────────────────── */}
+              <div className={`w-full ${reversed ? "lg:order-1" : "lg:order-2"}`}>
+                {/* Mobile title — above the image */}
+                <h3 className="lg:hidden font-heading text-3xl leading-tight font-medium text-[#222] text-center mb-6">
+                  {treatment.title}
+                </h3>
+
                 <div className="rounded-4xl bg-white p-2 shadow-[0_20px_50px_-16px_rgba(36,88,179,0.15)]">
                   <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-[#EDEDED]">
                     <Image
@@ -55,6 +61,19 @@ export default function Procedures() {
                       className={`object-cover ${treatment.imageClassName ?? ""}`}
                     />
                   </div>
+                </div>
+
+                {/* Mobile description + button — below the image */}
+                <div className="lg:hidden mt-6 text-center">
+                  <p className="text-balance text-[17px] leading-6.75 text-[#666] mb-8">
+                    {treatment.description}
+                  </p>
+                  <Link
+                    href="/book"
+                    className="inline-flex items-center rounded-full border border-[#2458B3] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-[#2458B3] transition-colors duration-300 hover:bg-[#2458B3] hover:text-white"
+                  >
+                    Book Consultation
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
