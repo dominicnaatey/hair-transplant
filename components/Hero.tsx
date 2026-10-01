@@ -20,7 +20,7 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
-  
+
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', date: '', time: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,6 @@ export default function Hero() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call for quick contact
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -53,22 +52,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden"
-      style={{ minHeight: '100svh' }}
+      className="relative w-full overflow-hidden min-h-svh"
     >
       {/* ─── Slide Backgrounds ─── */}
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
+          className={`absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${i === current ? 'opacity-100' : 'opacity-0'}`}
           aria-hidden={i !== current}
         >
+          {/* background-image must stay inline — it's a dynamic runtime value */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.bg})` }}
           />
-          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-linear-to-r from-[#0f172a]/80 via-[#0f172a]/50 to-transparent" />
           <div className="absolute inset-0 bg-linear-to-t from-[#0f172a]/60 via-transparent to-transparent" />
         </div>
@@ -79,9 +76,9 @@ export default function Hero() {
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full border border-white/5 animate-float-slow pointer-events-none" />
 
       {/* ─── Hero Content ─── */}
-      <div className="relative z-10 min-h-[100svh] flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
+      <div className="relative z-10 min-h-svh flex items-center px-8 lg:px-24 xl:px-32 py-28 lg:py-0">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center pt-16 lg:pt-0">
-          
+
           {/* Left: Text Content */}
           <div className="lg:col-span-7 relative h-[350px] lg:h-[400px]">
             <AnimatePresence mode="wait">
@@ -98,17 +95,8 @@ export default function Hero() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="inline-flex items-center gap-2 mb-6"
-                  style={{
-                    fontFamily: 'var(--font-dm-sans), DM Sans, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '0.3em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(255,255,255,0.8)',
-                  }}
+                  className="font-sans inline-flex items-center gap-2 mb-6 text-[12px] font-bold tracking-[0.3em] uppercase text-white/80"
                 >
-                  <span className="inline-block w-8 h-px bg-[#2458B3]" />
                   {slides[current].subtitle}
                 </motion.div>
 
@@ -117,21 +105,13 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="mb-8 whitespace-pre-line"
-                  style={{
-                    fontFamily: 'var(--font-chivo), Chivo, serif',
-                    fontWeight: 500,
-                    fontSize: 'clamp(48px, 6vw, 80px)',
-                    lineHeight: '1.1',
-                    letterSpacing: '-0.02em',
-                    color: '#ffffff',
-                  }}
+                  className="font-heading mb-8 whitespace-pre-line text-4xl md:text-7xl font-medium leading-[1.1] tracking-[-0.02em] text-white"
                 >
                   {slides[current].title}
                 </motion.h1>
 
                 {/* CTA */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
@@ -141,29 +121,21 @@ export default function Hero() {
                     <ArrowRightIcon className="w-4 h-4" />
                     Book Appointment
                   </Link>
-                  <Link
-                    href="/about"
-                    className="flex items-center gap-2 text-white/80 hover:text-white text-sm font-semibold tracking-widest uppercase transition-colors"
-                  >
-                    Learn More
-                    <span className="w-8 h-px bg-white/40 inline-block" />
-                  </Link>
                 </motion.div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Right: Quick Contact Form */}
+          {/* Right: Quick Contact Form (hidden) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end hidden">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
               className="w-full max-w-[420px] bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[32px] shadow-2xl relative overflow-hidden"
             >
-              {/* Decorative glare */}
               <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-white/10 to-transparent pointer-events-none" />
-              
+
               {submitted ? (
                 <div className="text-center py-8 relative z-10">
                   <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
@@ -178,56 +150,16 @@ export default function Hero() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-heading font-medium text-white mb-2">Book a Free Consultation</h3>
                   <p className="text-white/70 text-sm mb-6">Leave your details and a specialist will contact you to confirm your appointment.</p>
-                  
+
                   <form onSubmit={handleFormSubmit} className="space-y-4">
-                    <div>
-                      <input 
-                        type="text" 
-                        required
-                        placeholder="Full Name" 
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input 
-                        type="tel" 
-                        required
-                        placeholder="Phone Number" 
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input 
-                        type="email" 
-                        placeholder="Email (Optional)" 
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm"
-                      />
-                    </div>
+                    <input type="text" required placeholder="Full Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all" />
+                    <input type="tel" required placeholder="Phone Number" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all" />
+                    <input type="email" placeholder="Email (Optional)" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm" />
                     <div className="grid grid-cols-2 gap-3">
-                      <input 
-                        type="date" 
-                        value={formData.date}
-                        onChange={(e) => setFormData({...formData, date: e.target.value})}
-                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]"
-                      />
-                      <input 
-                        type="time" 
-                        value={formData.time}
-                        onChange={(e) => setFormData({...formData, time: e.target.value})}
-                        className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/50 outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]"
-                      />
+                      <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]" />
+                      <input type="time" value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value })} className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-white outline-none focus:border-white/50 focus:bg-white/20 transition-all text-sm [color-scheme:dark]" />
                     </div>
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className={`w-full bg-white text-[#222] font-bold tracking-wider uppercase text-sm py-4 rounded-2xl shadow-lg transition-all ${isSubmitting ? 'opacity-70' : 'hover:bg-gray-100 hover:-translate-y-0.5'}`}
-                    >
+                    <button type="submit" disabled={isSubmitting} className={`w-full bg-white text-[#222] font-bold tracking-wider uppercase text-sm py-4 rounded-2xl shadow-lg transition-all ${isSubmitting ? 'opacity-70' : 'hover:bg-gray-100 hover:-translate-y-0.5'}`}>
                       {isSubmitting ? 'Sending...' : 'Book Consultation'}
                     </button>
                     <div className="flex items-center justify-center gap-2 mt-4 opacity-70">
@@ -251,48 +183,29 @@ export default function Hero() {
             key={i}
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className="transition-all duration-300"
-            style={{
-              width: i === current ? 32 : 8,
-              height: 3,
-              background: i === current ? '#2458B3' : 'rgba(255,255,255,0.4)',
-              borderRadius: 4,
-              border: 'none',
-              cursor: 'pointer',
-            }}
+            className={`transition-all duration-300 h-[3px] rounded-[4px] border-none cursor-pointer ${
+              i === current ? 'w-8 bg-[#2458B3]' : 'w-2 bg-white/40'
+            }`}
           />
         ))}
       </div>
 
-      {/* ─── Prev / Next Navigation (template-style SVG corner) ─── */}
-      <div
-        className="hidden lg:flex absolute bottom-0 right-0 z-10"
-        style={{ width: 160, height: 80 }}
-      >
-        {/* Left SVG notch */}
-        {/* <svg viewBox="0 0 100 100" className="h-full" style={{ width: 40 }}>
-          <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#F9F8F6" />
-        </svg> */}
-
-        {/* Prev button */}
+      {/* ─── Prev / Next Navigation ─── */}
+      <div className="hidden lg:flex absolute bottom-0 right-0 z-10 w-40 h-20">
         <button
           onClick={prev}
           aria-label="Previous slide"
-          className="flex items-center justify-center bg-[#F9F8F6] hover:bg-[#2458B3] text-[#222] hover:text-white transition-colors duration-300"
-          style={{ width: 60, height: 80 }}
+          className="flex items-center justify-center w-[60px] h-20 bg-[#F9F8F6] hover:bg-[#2458B3] text-[#222] hover:text-white transition-colors duration-300"
         >
           <ChevronLeftIcon className="w-5 h-5" />
         </button>
 
-        {/* Divider */}
-        <div className="w-px bg-gray-200" style={{ height: 80 }} />
+        <div className="w-px h-20 bg-gray-200" />
 
-        {/* Next button */}
         <button
           onClick={next}
           aria-label="Next slide"
-          className="flex items-center justify-center bg-[#F9F8F6] hover:bg-[#2458B3] text-[#222] hover:text-white transition-colors duration-300"
-          style={{ width: 60, height: 80 }}
+          className="flex items-center justify-center w-[60px] h-20 bg-[#F9F8F6] hover:bg-[#2458B3] text-[#222] hover:text-white transition-colors duration-300"
         >
           <ChevronRightIcon className="w-5 h-5" />
         </button>
@@ -301,10 +214,7 @@ export default function Hero() {
       {/* ─── Scroll indicator ─── */}
       <div className="hidden lg:flex absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 flex-col items-center gap-2 z-10">
         <div className="w-px h-16 bg-white/20" />
-        <span
-          className="text-white/40 uppercase tracking-widest"
-          style={{ fontSize: 10, writingMode: 'vertical-rl', fontWeight: 700 }}
-        >
+        <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest [writing-mode:vertical-rl]">
           Scroll
         </span>
       </div>
