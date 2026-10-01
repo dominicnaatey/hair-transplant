@@ -96,11 +96,24 @@ function StepCard({ step, index }: { step: typeof steps[number]; index: number }
             >
               {step.title}
             </h3>
+
+            {/* Mobile image — shown between title and body on small screens */}
+            <div className="lg:hidden relative w-full aspect-video rounded-xl overflow-hidden mb-6">
+              <Image
+                src={step.image}
+                alt={step.title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+
             <p style={{ color: '#666', lineHeight: '27px', marginBottom: 28, maxWidth: 560 }}>
               {step.body}
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mb-8">
+            {/* Col items — desktop only */}
+            <div className="hidden lg:grid grid-cols-2 gap-8 mb-8">
               {/* Col 1 */}
               <div>
                 <h5
@@ -147,7 +160,7 @@ function StepCard({ step, index }: { step: typeof steps[number]; index: number }
             </Link>
           </div>
 
-          {/* Image */}
+          {/* Image — desktop only */}
           <div className="relative hidden lg:block" style={{ minHeight: 320 }}>
             <Image
               src={step.image}
