@@ -266,7 +266,7 @@ export default function Hero() {
 
       {/* ─── Prev / Next Navigation (template-style SVG corner) ─── */}
       <div
-        className="absolute bottom-0 right-0 z-10 flex"
+        className="hidden lg:flex absolute bottom-0 right-0 z-10"
         style={{ width: 160, height: 80 }}
       >
         {/* Left SVG notch */}
@@ -299,7 +299,7 @@ export default function Hero() {
       </div>
 
       {/* ─── Scroll indicator ─── */}
-      <div className="absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 z-10">
+      <div className="hidden lg:flex absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 flex-col items-center gap-2 z-10">
         <div className="w-px h-16 bg-white/20" />
         <span
           className="text-white/40 uppercase tracking-widest"
