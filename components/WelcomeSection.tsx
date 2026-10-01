@@ -96,7 +96,7 @@ export default function WelcomeSection() {
                 delay={i * 0.15}
                 className="flex items-center gap-5 md:gap-8"
               >
-                <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
+                <div className="flex h-25 w-25 lg:h-28 lg:w-28 shrink-0 items-center justify-center rounded-full border-2 border-[#EEF1F5] bg-[radial-gradient(circle_at_center,#2458B3_0_50%,transparent_52%)]">
                   <div className="font-sans text-xl leading-none font-bold text-white">
                     <CountUp
                       end={s.end}
