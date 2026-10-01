@@ -84,7 +84,7 @@ function StepCard({ step, index }: { step: typeof steps[number]; index: number }
       >
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] min-h-80">
           {/* Content */}
-          <div className="p-10 lg:p-14 flex flex-col justify-center">
+          <div className="p-6 lg:p-14 flex flex-col justify-center">
             <h3
               style={{
                 fontFamily: 'var(--font-chivo), Chivo, serif',
